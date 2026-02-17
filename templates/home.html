@@ -52,25 +52,45 @@
       const text = card.dataset.search || '';
       card.style.display = text.includes(q) ? '' : 'none';
     });
-    // Show all sections during search
-    document.querySelectorAll('.section-block').forEach(s => s.style.display = '');
+    // Hide empty sections
+    document.querySelectorAll('.section-block').forEach(section => {
+      const visible = section.querySelectorAll('.item-card:not([style*="display: none"])');
+      section.style.display = visible.length ? '' : 'none';
+    });
   });
 
   // Tabs
   const tabs = document.querySelectorAll('.tab');
+  const sections = document.querySelectorAll('.section-block');
+  const trendingTab = tabs[0];
+
+  function applyFilter(tag) {
+    cards.forEach(card => {
+      if (!tag) {
+        card.style.display = '';
+      } else {
+        const cardTags = card.dataset.tags || '';
+        card.style.display = cardTags.includes(tag) ? '' : 'none';
+      }
+    });
+    // Hide sections with no visible cards
+    sections.forEach(section => {
+      const visible = section.querySelectorAll('.item-card:not([style*="display: none"])');
+      section.style.display = visible.length ? '' : 'none';
+    });
+  }
+
   tabs.forEach(tab => {
     tab.addEventListener('click', function() {
+      if (this.classList.contains('active') && this !== trendingTab) {
+        tabs.forEach(t => t.classList.remove('active'));
+        trendingTab.classList.add('active');
+        applyFilter('');
+        return;
+      }
       tabs.forEach(t => t.classList.remove('active'));
       this.classList.add('active');
-      const tag = this.dataset.tag;
-      cards.forEach(card => {
-        if (!tag) {
-          card.style.display = '';
-        } else {
-          const cardTags = card.dataset.tags || '';
-          card.style.display = cardTags.includes(tag) ? '' : 'none';
-        }
-      });
+      applyFilter(this.dataset.tag);
     });
   });
 })();
