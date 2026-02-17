@@ -89,7 +89,7 @@ function buildCard(article) {
         <h4>${article.title}</h4>
         <p>${article.summary}</p>
         <div class="item-meta">
-          <span class="tag">${tag}</span>
+          ${article.tags.map(t => `<span class="tag">${t}</span>`).join('')}
           <span class="upvote">▲ ${state[article.id]}</span>
         </div>
       </div>
