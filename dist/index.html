@@ -203,21 +203,22 @@
     });
   });
 
-  // Tabs
+  // Tabs (multi-select)
   const tabs = document.querySelectorAll('.tab');
   const sections = document.querySelectorAll('.section-block');
   const trendingTab = tabs[0];
+  const activeTags = new Set();
 
-  function applyFilter(tag) {
+  function applyFilters() {
     cards.forEach(card => {
-      if (!tag) {
+      if (activeTags.size === 0) {
         card.style.display = '';
       } else {
-        const cardTags = card.dataset.tags || '';
-        card.style.display = cardTags.includes(tag) ? '' : 'none';
+        const cardTags = (card.dataset.tags || '').split(',');
+        const match = [...activeTags].some(t => cardTags.includes(t));
+        card.style.display = match ? '' : 'none';
       }
     });
-    // Hide sections with no visible cards
     sections.forEach(section => {
       const visible = section.querySelectorAll('.item-card:not([style*="display: none"])');
       section.style.display = visible.length ? '' : 'none';
@@ -226,15 +227,33 @@
 
   tabs.forEach(tab => {
     tab.addEventListener('click', function() {
-      if (this.classList.contains('active') && this !== trendingTab) {
+      const tag = this.dataset.tag;
+
+      // Clicking Trending clears all filters
+      if (!tag) {
+        activeTags.clear();
         tabs.forEach(t => t.classList.remove('active'));
         trendingTab.classList.add('active');
-        applyFilter('');
+        applyFilters();
         return;
       }
-      tabs.forEach(t => t.classList.remove('active'));
-      this.classList.add('active');
-      applyFilter(this.dataset.tag);
+
+      // Toggle this tag
+      if (activeTags.has(tag)) {
+        activeTags.delete(tag);
+        this.classList.remove('active');
+      } else {
+        activeTags.add(tag);
+        this.classList.add('active');
+        trendingTab.classList.remove('active');
+      }
+
+      // If nothing selected, revert to Trending
+      if (activeTags.size === 0) {
+        trendingTab.classList.add('active');
+      }
+
+      applyFilters();
     });
   });
 })();
