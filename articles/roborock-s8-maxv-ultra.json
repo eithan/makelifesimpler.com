@@ -1,18 +1,21 @@
 {
   "id": "roborock-s8-maxv-ultra",
   "title": "Roborock S8 MaxV Ultra",
-  "emoji": "🤖",
+  "emoji": "\ud83e\udd16",
   "summary": "A robot vacuum and mop that empties itself, washes its own mop pads, and navigates with AI obstacle avoidance. Set it and truly forget it.",
-  "content": "<p>The Roborock S8 MaxV Ultra is as close to a fully autonomous cleaning robot as you can get. It vacuums, mops, empties its dustbin, washes and dries its mop pads, and refills its water tank — all automatically. You genuinely just let it run and forget about it for weeks.</p><p>The AI-powered obstacle avoidance uses a camera and structured light to identify and dodge shoes, cables, pet waste, and other floor clutter. The LiDAR navigation creates precise maps of your home, letting you set no-go zones, room-specific cleaning schedules, and custom suction levels per area.</p><p>The dual rubber brushes handle everything from hardwood to carpet, and the VibraRise mopping system lifts the mop pad when it detects carpet. Integration with Home Assistant and Alexa means you can trigger cleaning from automations or voice commands. It's the single best quality-of-life upgrade for any home.</p>",
-  "tags": ["Smart Home", "Products"],
+  "content": "<p>The Roborock S8 MaxV Ultra is as close to a fully autonomous cleaning robot as you can get. It vacuums, mops, empties its dustbin, washes and dries its mop pads, and refills its water tank \u2014 all automatically. You genuinely just let it run and forget about it for weeks.</p><p>The AI-powered obstacle avoidance uses a camera and structured light to identify and dodge shoes, cables, pet waste, and other floor clutter. The LiDAR navigation creates precise maps of your home, letting you set no-go zones, room-specific cleaning schedules, and custom suction levels per area.</p><p>The dual rubber brushes handle everything from hardwood to carpet, and the VibraRise mopping system lifts the mop pad when it detects carpet. Integration with Home Assistant and Alexa means you can trigger cleaning from automations or voice commands. It's the single best quality-of-life upgrade for any home.</p>",
+  "tags": [
+    "Smart Home",
+    "Products"
+  ],
   "section": "products",
   "guides": [
     {
-      "title": "Roborock S8 MaxV Ultra Review (Video)",
+      "title": "Roborock S8 MaxV Ultra \u2014 6 Months Later",
       "type": "video",
-      "source": "Vacuum Wars",
-      "url": "https://www.youtube.com/watch?v=w0orTew9JHQ",
-      "summary": "In-depth review covering setup, cleaning performance, and dock features."
+      "source": "6 Months Later",
+      "url": "https://www.youtube.com/watch?v=cG1Lq3RIf6U",
+      "summary": "Honest long-term review covering setup, daily use, and whether it's worth it."
     },
     {
       "title": "Roborock Support & Setup",
