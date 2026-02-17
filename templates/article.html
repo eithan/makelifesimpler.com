@@ -1,0 +1,34 @@
+<!-- Article page - loads content dynamically -->
+<div class="hero hero-small">
+  <a href="index.html" class="back-link">← Back to all picks</a>
+  <div class="logo">make life <span class="accent">simpler</span></div>
+</div>
+
+<div class="article-container" id="articleContainer">
+  <div class="article-loading">Loading...</div>
+</div>
+
+<script>
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  if (!id) { document.getElementById('articleContainer').innerHTML = '<p>Article not found.</p>'; return; }
+
+  fetch('articles/' + id + '.json')
+    .then(r => { if (!r.ok) throw new Error(); return r.json(); })
+    .then(article => {
+      const tags = article.tags.map(t => '<span class="tag">' + t + '</span>').join('');
+      document.getElementById('articleContainer').innerHTML =
+        '<div class="article-header">' +
+          '<span class="article-emoji">' + article.emoji + '</span>' +
+          '<h1>' + article.title + '</h1>' +
+          '<div class="article-tags">' + tags + '</div>' +
+        '</div>' +
+        '<div class="article-body">' + article.content + '</div>';
+      document.title = article.title + ' — Make Life Simpler';
+    })
+    .catch(() => {
+      document.getElementById('articleContainer').innerHTML = '<p>Article not found.</p>';
+    });
+})();
+</script>

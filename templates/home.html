@@ -1,0 +1,77 @@
+<!-- Hero -->
+<div class="hero">
+  <div class="logo">make life <span class="accent">simpler</span></div>
+  <p class="tagline">Curated tools, products, and discoveries that actually save you time. No fluff, no filler — just things that work.</p>
+  <div class="search-bar">
+    <span class="icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="Search {{TOTAL_ARTICLES}}+ curated recommendations...">
+  </div>
+</div>
+
+<!-- Stats -->
+<div class="stats">
+  <div class="stat">
+    <div class="num">{{TOTAL_ARTICLES}}</div>
+    <div class="label">Curated Picks</div>
+  </div>
+  <div class="stat">
+    <div class="num">{{TOTAL_TAGS}}</div>
+    <div class="label">Categories</div>
+  </div>
+  <div class="stat">
+    <div class="num">{{TOTAL_CLICKS}}</div>
+    <div class="label">People Helped</div>
+  </div>
+  <div class="stat">
+    <div class="num">New</div>
+    <div class="label">Updated Weekly</div>
+  </div>
+</div>
+
+<!-- Tabs -->
+<div class="tabs" id="tabs">
+  {{TABS}}
+</div>
+
+<div class="content">
+  <!-- Featured -->
+  {{FEATURED}}
+
+  <!-- Sections -->
+  {{SECTIONS}}
+</div>
+
+<script>
+(function() {
+  // Search
+  const input = document.getElementById('searchInput');
+  const cards = document.querySelectorAll('.item-card');
+  input.addEventListener('input', function() {
+    const q = this.value.toLowerCase();
+    cards.forEach(card => {
+      const text = card.dataset.search || '';
+      card.style.display = text.includes(q) ? '' : 'none';
+    });
+    // Show all sections during search
+    document.querySelectorAll('.section-block').forEach(s => s.style.display = '');
+  });
+
+  // Tabs
+  const tabs = document.querySelectorAll('.tab');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      tabs.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+      const tag = this.dataset.tag;
+      cards.forEach(card => {
+        if (!tag) {
+          card.style.display = '';
+        } else {
+          const cardTags = card.dataset.tags || '';
+          card.style.display = cardTags.includes(tag) ? '' : 'none';
+        }
+      });
+    });
+  });
+})();
+</script>

@@ -1,0 +1,8 @@
+{
+  "name": "makelifesimpler.com",
+  "version": "1.0.0",
+  "description": "A curated hub of tools and products that make life simpler",
+  "scripts": {
+    "build": "node build.js"
+  }
+}

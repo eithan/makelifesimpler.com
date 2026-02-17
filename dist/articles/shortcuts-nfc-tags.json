@@ -1,0 +1,10 @@
+{
+  "id": "shortcuts-nfc-tags",
+  "title": "Shortcuts + NFC Tags",
+  "emoji": "📱",
+  "summary": "Tap your phone to a $0.50 sticker to trigger any automation. Start timers, control lights, log habits.",
+  "content": "<p>NFC tags cost pennies, stick anywhere, and turn your phone into a magic wand. Pair them with Apple Shortcuts or Android's Tasker and you can trigger complex automations with a single tap — no app opening required.</p><p>Stick one on your nightstand to activate your bedtime routine: lights off, alarm set, Do Not Disturb on. Put another by the front door to log when you leave and turn off all smart devices. The possibilities are endless and the setup takes minutes per tag.</p><p>Power users chain multiple actions together — tap a tag at your desk to start a Pomodoro timer, open your task manager, and set Slack to DND. At roughly $0.30-0.50 per tag in bulk, this is the cheapest productivity upgrade you'll ever make.</p>",
+  "tags": ["Automation", "Smart Home"],
+  "section": "tech",
+  "featured": false
+}

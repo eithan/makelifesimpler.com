@@ -1,0 +1,10 @@
+{
+  "id": "tailscale",
+  "title": "Tailscale",
+  "emoji": "🔒",
+  "summary": "Access your home network from anywhere, securely. Zero config VPN that just works.",
+  "content": "<p>Tailscale makes VPN setup feel like it doesn't exist. Install it on your devices, sign in, and suddenly everything is on the same private network — your home server, your work laptop, your phone on coffee shop WiFi. No port forwarding, no firewall rules, no headaches.</p><p>Built on WireGuard, it's fast and lightweight. The free tier covers up to 100 devices and 3 users, which is more than enough for personal use. Access your Home Assistant dashboard, SSH into your Raspberry Pi, or stream from your Plex server — all securely, from anywhere in the world.</p><p>The killer feature is MagicDNS: every device gets a memorable hostname like \"laptop.tailnet\" instead of random IPs. Combined with exit nodes and subnet routing, it replaces commercial VPN services for most people. Setup takes under five minutes.</p>",
+  "tags": ["Networking", "Security"],
+  "section": "tech",
+  "featured": false
+}

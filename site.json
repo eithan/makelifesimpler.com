@@ -1,0 +1,7 @@
+{
+  "sections": [
+    { "id": "tech", "title": "Tech That Changes Everything", "emoji": "⚡" },
+    { "id": "products", "title": "Products Worth Every Penny", "emoji": "🛒" }
+  ],
+  "featuredOverride": null
+}

@@ -1,0 +1,10 @@
+{
+  "id": "perplexity-ai",
+  "title": "Perplexity AI",
+  "emoji": "🧠",
+  "summary": "AI search that gives you real answers with sources. Replaces 80% of your Google searches.",
+  "content": "<p>Perplexity AI is what Google search should have become. Ask it anything — from \"best budget NAS for home use\" to \"how does mRNA vaccination work\" — and you get a concise, sourced answer instead of ten blue links leading to ad-stuffed pages.</p><p>The Pro tier adds GPT-4 and Claude-level reasoning, letting you do deep research with follow-up questions. It remembers context within a thread, so you can drill down without re-explaining. Students, researchers, and developers are switching in droves.</p><p>The free tier is generous enough for daily use. The mobile app is fast, and the Chrome extension lets you highlight any text on the web and ask Perplexity to explain it. Once you try it for a week, going back to traditional search feels painful.</p>",
+  "tags": ["AI Tools", "Productivity"],
+  "section": "tech",
+  "featured": false
+}

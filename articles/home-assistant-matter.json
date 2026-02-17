@@ -1,0 +1,10 @@
+{
+  "id": "home-assistant-matter",
+  "title": "Home Assistant + Matter",
+  "emoji": "🏠",
+  "summary": "Unify every smart device under one open-source hub. No more 12 different apps.",
+  "content": "<p>Home Assistant has become the gold standard for smart home control, and with Matter support built in, it's now easier than ever to bring every device under one roof. Whether you're running Hue lights, Ecobee thermostats, or Eve sensors, Matter gives them a common language — and Home Assistant speaks it fluently.</p><p>The real magic is in automations. Set your lights to dim at sunset, lock the doors when everyone leaves, and get notified if a water sensor triggers — all from a single dashboard. No cloud dependency, no subscriptions, and your data stays local.</p><p>Setup takes about an hour with a Raspberry Pi or a mini PC. Once running, you'll wonder how you ever managed a smart home without it. The community adds integrations weekly, covering everything from robot vacuums to EV chargers.</p>",
+  "tags": ["Smart Home", "Automation"],
+  "section": "tech",
+  "featured": false
+}
