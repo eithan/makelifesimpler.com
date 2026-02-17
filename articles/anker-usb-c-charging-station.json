@@ -4,7 +4,38 @@
   "emoji": "🔌",
   "summary": "One cable, one station, charges everything. Eliminates the cable drawer of shame.",
   "content": "<p>The Anker USB-C Charging Station replaces the tangle of cables and adapters on your desk with a single, elegant hub. It delivers up to 140W total, with individual ports smart enough to negotiate the right wattage for each device — from your MacBook Pro down to your earbuds.</p><p>With 6 ports (a mix of USB-C and USB-A), you can charge your laptop, phone, tablet, watch, and earbuds simultaneously. The compact design takes up less space than most wireless chargers, and the GaN technology keeps it cool and efficient.</p><p>The real win is simplicity. One station on your desk, one on your nightstand, done. No more hunting for the right charger or discovering your phone didn't charge overnight because you grabbed the wrong cable. It just works, every time.</p>",
-  "tags": ["Gadgets", "Tech"],
+  "tags": [
+    "Gadgets",
+    "Tech"
+  ],
   "section": "products",
-  "featured": false
+  "featured": false,
+  "guides": [
+    {
+      "title": "Desk Setup: Cable-Free in 5 Minutes",
+      "difficulty": "beginner",
+      "timeEstimate": "5 min",
+      "steps": [
+        {
+          "text": "Unbox the station and place it on your desk or nightstand"
+        },
+        {
+          "text": "Connect the single power cable to an outlet"
+        },
+        {
+          "text": "Plug in your devices — USB-C for laptop/phone, USB-A for accessories"
+        },
+        {
+          "text": "Use short 6-inch cables to keep things tidy",
+          "link": "https://www.amazon.com/dp/B09LCJPZ1P"
+        },
+        {
+          "text": "Label each cable with small tags if you have many similar devices"
+        },
+        {
+          "text": "Route the power cable behind the desk with adhesive clips"
+        }
+      ]
+    }
+  ]
 }

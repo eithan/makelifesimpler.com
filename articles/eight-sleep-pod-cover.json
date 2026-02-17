@@ -4,7 +4,44 @@
   "emoji": "😴",
   "summary": "Auto-adjusts bed temperature throughout the night. Users report 30%+ better sleep scores.",
   "content": "<p>The Eight Sleep Pod Cover turns any mattress into a smart bed. It circulates water through a thin layer to heat or cool each side independently — so you can sleep at 68°F while your partner sleeps at 74°F. No more thermostat wars.</p><p>The real intelligence is in the adaptive algorithm. It learns your sleep patterns and automatically adjusts temperature through the night — cooler during deep sleep, warmer before your wake-up time. The gentle thermal alarm replaces jarring phone alarms.</p><p>Sleep tracking rivals dedicated devices like Oura, measuring heart rate, HRV, respiratory rate, and sleep stages. Users consistently report 20-30% improvement in sleep scores within the first month. At the price of a good mattress, it's a health investment that pays dividends every single night.</p>",
-  "tags": ["Sleep", "Health"],
+  "tags": [
+    "Sleep",
+    "Health"
+  ],
   "section": "products",
-  "featured": false
+  "featured": false,
+  "guides": [
+    {
+      "title": "Setup: Mattress to Smart Bed",
+      "difficulty": "beginner",
+      "timeEstimate": "30 min",
+      "steps": [
+        {
+          "text": "Unbox and lay the Pod Cover on top of your mattress (fits like a fitted sheet)"
+        },
+        {
+          "text": "Place the Hub unit next to your bed and connect the water tubes"
+        },
+        {
+          "text": "Fill the Hub with distilled water using the included funnel"
+        },
+        {
+          "text": "Plug in and connect to WiFi via the Eight Sleep app",
+          "link": "https://apps.apple.com/app/eight-sleep/id1098591321"
+        },
+        {
+          "text": "Set each side's temperature preference (-10 to +10 scale)"
+        },
+        {
+          "text": "Enable Autopilot to let the AI adjust temperature throughout the night"
+        },
+        {
+          "text": "Calibrate over the first week — the algorithm learns your patterns"
+        },
+        {
+          "text": "Check your sleep report each morning and adjust as needed"
+        }
+      ]
+    }
+  ]
 }

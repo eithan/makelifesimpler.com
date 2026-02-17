@@ -4,7 +4,45 @@
   "emoji": "🍳",
   "summary": "Pressure cook a week of meals in one afternoon. The ultimate meal-prep time hack.",
   "content": "<p>The Instant Pot Pro Plus replaces your slow cooker, pressure cooker, rice cooker, steamer, and yogurt maker in one countertop appliance. It's the Swiss Army knife of the kitchen, and it genuinely saves hours every week for anyone who meal preps.</p><p>The pressure cooking function is the star. What takes 8 hours in a slow cooker takes 45 minutes under pressure — with better results. Tough cuts of meat come out fall-apart tender. Dried beans cook in 30 minutes without soaking. Steel-cut oats in 12 minutes.</p><p>The Pro Plus model adds smart connectivity and a sous vide function, but the real reason to buy is the stainless steel inner pot (no non-stick coating to worry about) and the improved steam release valve. Sunday meal prep becomes almost effortless — cook three proteins, a grain, and a soup in a single afternoon.</p>",
-  "tags": ["Kitchen", "Cooking"],
+  "tags": [
+    "Kitchen",
+    "Cooking"
+  ],
   "section": "products",
-  "featured": false
+  "featured": false,
+  "guides": [
+    {
+      "title": "Meal Prep Sunday: Learn the Basics",
+      "difficulty": "beginner",
+      "timeEstimate": "20 min to learn",
+      "steps": [
+        {
+          "text": "Download a meal prep recipe app like Mealime or Paprika",
+          "link": "https://www.mealime.com/"
+        },
+        {
+          "text": "Pick 2-3 recipes for the week and buy ingredients in bulk"
+        },
+        {
+          "text": "Start with pressure-cooked protein (chicken thighs: 12 min, pork shoulder: 45 min)"
+        },
+        {
+          "text": "Use the steam function for veggies while protein rests (broccoli: 2 min, sweet potato: 8 min)"
+        },
+        {
+          "text": "Cook grains: rice on Rice mode, quinoa 1 min pressure + 10 min natural release"
+        },
+        {
+          "text": "Portion into glass containers for the week",
+          "link": "https://www.amazon.com/dp/B09QHXC5V7"
+        },
+        {
+          "text": "Store in fridge (3-4 days) or freezer (up to 3 months)"
+        },
+        {
+          "text": "Clean up: inner pot + sealing ring are dishwasher safe"
+        }
+      ]
+    }
+  ]
 }
