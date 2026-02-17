@@ -4,98 +4,33 @@
   "emoji": "🤖",
   "summary": "An open-source AI agent that runs on your own server. It reads your messages, manages your smart home, monitors your inbox, and handles tasks while you sleep.",
   "content": "<p>OpenClaw is what happens when you give an AI agent its own server and let it run continuously. It connects to your messaging platforms, email, calendar, smart home, and more — then handles tasks proactively, not just when you ask. Think of it as a personal assistant that never sleeps.</p><p>Unlike chatbot-style AI tools, OpenClaw maintains persistent memory across sessions. It learns your preferences, remembers your projects, and builds context over time. Ask it to monitor your inbox for important emails, manage your Home Assistant automations, or keep track of package deliveries — it just does it, in the background.</p><p>The self-hosted approach means your data stays on your hardware. No cloud dependency, no subscription fees for the core platform, and full control over which AI models power it. The community is growing fast, with plugins for everything from Discord bots to automated code review. It's the closest thing to a real personal assistant that exists today.</p>",
-  "tags": [
-    "AI Tools",
-    "Automation"
-  ],
+  "tags": ["AI Tools", "Automation"],
   "section": "tech",
   "featured": true,
   "guides": [
     {
-      "title": "Easiest: Paid Hosting Provider",
-      "difficulty": "beginner",
-      "timeEstimate": "10 min",
-      "steps": [
-        {
-          "text": "Sign up at a cloud hosting provider like Railway or Render",
-          "link": "https://railway.app"
-        },
-        {
-          "text": "Deploy OpenClaw from the marketplace or one-click template"
-        },
-        {
-          "text": "Set your API keys (OpenAI/Anthropic) in environment variables"
-        },
-        {
-          "text": "Connect your messaging platform (Discord, Telegram, etc.)"
-        },
-        {
-          "text": "Start chatting — your agent is live!"
-        }
-      ],
-      "video": "https://youtube.com/watch?v=placeholder"
+      "title": "Full Setup Guide (Video)",
+      "type": "video",
+      "source": "Alex Finn",
+      "url": "https://www.youtube.com/watch?v=_kZCoW-Qxnc",
+      "summary": "Complete walkthrough covering installation, configuration, and connecting your messaging apps."
     },
     {
-      "title": "DIY: AWS Free Tier",
-      "difficulty": "intermediate",
-      "timeEstimate": "30 min",
-      "steps": [
-        {
-          "text": "Create an AWS account (free tier eligible)",
-          "link": "https://aws.amazon.com/free/"
-        },
-        {
-          "text": "Launch an EC2 t3.micro instance with Ubuntu 22.04"
-        },
-        {
-          "text": "SSH into your instance and install Node.js 20+",
-          "link": "https://nodejs.org/en/download/package-manager"
-        },
-        {
-          "text": "Clone and install OpenClaw from GitHub",
-          "link": "https://github.com/openclaw-ai/openclaw"
-        },
-        {
-          "text": "Configure your .env file with API keys and messaging tokens"
-        },
-        {
-          "text": "Set up as a systemd service so it survives reboots"
-        },
-        {
-          "text": "Secure with UFW firewall rules and optionally add Tailscale",
-          "link": "https://tailscale.com/download"
-        }
-      ]
+      "title": "Official Documentation",
+      "type": "article",
+      "source": "OpenClaw Docs",
+      "url": "https://docs.openclaw.ai",
+      "summary": "Installation guide, configuration reference, and security best practices."
     },
     {
-      "title": "Advanced: Self-Hosted on Dedicated Hardware",
-      "difficulty": "advanced",
-      "timeEstimate": "1 hour",
+      "title": "Quick Overview",
+      "type": "summary",
       "steps": [
-        {
-          "text": "Set up a dedicated server or Raspberry Pi 4/5 with Ubuntu Server"
-        },
-        {
-          "text": "Install Node.js, Git, and PM2 for process management",
-          "link": "https://pm2.keymetrics.io/"
-        },
-        {
-          "text": "Clone OpenClaw and configure all integrations (email, calendar, smart home)"
-        },
-        {
-          "text": "Set up a reverse proxy with Caddy or Nginx for HTTPS",
-          "link": "https://caddyserver.com/"
-        },
-        {
-          "text": "Point a custom domain to your server via DNS"
-        },
-        {
-          "text": "Add monitoring with Uptime Kuma or Healthchecks.io",
-          "link": "https://github.com/louislam/uptime-kuma"
-        },
-        {
-          "text": "Configure automatic backups of your OpenClaw data directory"
-        }
+        "Get a server (AWS free tier, VPS, or Raspberry Pi)",
+        "Install Node.js and OpenClaw",
+        "Connect your messaging platform (Discord, Telegram, etc.)",
+        "Secure with firewall rules and Tailscale",
+        "Configure your AI model and start chatting"
       ]
     }
   ]

@@ -2,70 +2,33 @@
   "id": "tailscale",
   "title": "Tailscale",
   "emoji": "🔒",
-  "summary": "Access your home network from anywhere, securely. Zero config VPN that just works.",
-  "content": "<p>Tailscale makes VPN setup feel like it doesn't exist. Install it on your devices, sign in, and suddenly everything is on the same private network — your home server, your work laptop, your phone on coffee shop WiFi. No port forwarding, no firewall rules, no headaches.</p><p>Built on WireGuard, it's fast and lightweight. The free tier covers up to 100 devices and 3 users, which is more than enough for personal use. Access your Home Assistant dashboard, SSH into your Raspberry Pi, or stream from your Plex server — all securely, from anywhere in the world.</p><p>The killer feature is MagicDNS: every device gets a memorable hostname like \"laptop.tailnet\" instead of random IPs. Combined with exit nodes and subnet routing, it replaces commercial VPN services for most people. Setup takes under five minutes.</p>",
-  "tags": [
-    "Networking",
-    "Security"
-  ],
+  "summary": "A zero-config VPN that connects all your devices into a secure private network. Access your home server, NAS, or Raspberry Pi from anywhere.",
+  "content": "<p>Tailscale makes networking simple. Install it on any device, sign in, and suddenly all your devices can talk to each other securely — no port forwarding, no firewall rules, no dynamic DNS. It uses WireGuard under the hood for blazing-fast encrypted connections.</p><p>The magic is in the simplicity. Want to SSH into your home server from a coffee shop? Just use its Tailscale IP. Want to access your Home Assistant dashboard remotely? It's already there. Tailscale creates a mesh VPN where every device connects directly to every other device, with no central server bottleneck.</p><p>The free tier is generous — up to 100 devices and 3 users. Features like MagicDNS give your devices memorable names, subnet routers let you access your entire home network, and exit nodes let you route all traffic through a specific device. It's the networking tool that makes everything else possible.</p>",
+  "tags": ["Networking", "Security"],
   "section": "tech",
-  "featured": false,
   "guides": [
     {
-      "title": "Basic Setup: Connect Your Devices",
-      "difficulty": "beginner",
-      "timeEstimate": "10 min",
-      "steps": [
-        {
-          "text": "Sign up for Tailscale (free for personal use)",
-          "link": "https://login.tailscale.com/start"
-        },
-        {
-          "text": "Install Tailscale on your first device",
-          "link": "https://tailscale.com/download"
-        },
-        {
-          "text": "Sign in — the device appears in your tailnet automatically"
-        },
-        {
-          "text": "Install on your second device and sign in with the same account"
-        },
-        {
-          "text": "Both devices can now reach each other by name (e.g., ping laptop)"
-        },
-        {
-          "text": "Access your home services remotely — Home Assistant, Plex, file shares"
-        }
-      ]
+      "title": "Tailscale in 100 Seconds (Video)",
+      "type": "video",
+      "source": "Fireship",
+      "url": "https://www.youtube.com/watch?v=Lag9Vaa3YlQ",
+      "summary": "Lightning-fast overview of what Tailscale is and why it matters."
     },
     {
-      "title": "Advanced: Exit Node + Pi-hole Ad Blocking",
-      "difficulty": "intermediate",
-      "timeEstimate": "30 min",
+      "title": "Quickstart Guide",
+      "type": "article",
+      "source": "Tailscale Docs",
+      "url": "https://tailscale.com/kb/1017/install",
+      "summary": "Official quickstart covering installation on every platform and first connection."
+    },
+    {
+      "title": "Quick Overview",
+      "type": "summary",
       "steps": [
-        {
-          "text": "Set up a home server or Pi with Tailscale installed"
-        },
-        {
-          "text": "Enable the exit node feature: sudo tailscale up --advertise-exit-node"
-        },
-        {
-          "text": "Approve the exit node in the Tailscale admin console",
-          "link": "https://login.tailscale.com/admin/machines"
-        },
-        {
-          "text": "Install Pi-hole on the same machine for ad blocking",
-          "link": "https://pi-hole.net/"
-        },
-        {
-          "text": "Set Pi-hole as your Tailnet DNS in admin console → DNS settings"
-        },
-        {
-          "text": "On your phone/laptop, select the exit node in Tailscale settings"
-        },
-        {
-          "text": "All traffic now routes through your home — encrypted and ad-free"
-        }
+        "Sign up at tailscale.com with Google, Microsoft, or GitHub",
+        "Install the Tailscale app on each device",
+        "Log in — devices automatically join your private network",
+        "Access any device by its Tailscale IP or MagicDNS name"
       ]
     }
   ]

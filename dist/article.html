@@ -24,21 +24,40 @@
   const id = params.get('id');
   if (!id) { document.getElementById('articleContainer').innerHTML = '<p>Article not found.</p>'; return; }
 
+  function youtubeId(url) {
+    var m = url.match(/[?&]v=([^&]+)/);
+    return m ? m[1] : '';
+  }
+
   fetch('articles/' + id + '.json')
     .then(r => { if (!r.ok) throw new Error(); return r.json(); })
     .then(article => {
       const tags = article.tags.map(t => '<span class="tag">' + t + '</span>').join('');
       let guidesHtml = '';
       if (article.guides && article.guides.length) {
-        const diffBadge = d => d === 'beginner' ? '<span class="guide-badge guide-beginner">🟢 Beginner</span>' : d === 'intermediate' ? '<span class="guide-badge guide-intermediate">🟡 Intermediate</span>' : '<span class="guide-badge guide-advanced">🔴 Advanced</span>';
         guidesHtml = '<div class="guides-section"><h2 class="guides-title">🚀 Help Me Make Life Simpler!</h2><div class="guides-list">' +
           article.guides.map((g, i) => {
-            const steps = g.steps.map((s, j) => '<li>' + (s.link ? '<a href="' + s.link + '" target="_blank" rel="noopener">' + s.text + '</a>' : s.text) + '</li>').join('');
-            const video = g.video ? '<div class="guide-video"><iframe src="https://www.youtube.com/embed/' + g.video.split('v=')[1].split('&')[0] + '" frameborder="0" allowfullscreen loading="lazy"></iframe></div>' : '';
-            return '<div class="guide-card" data-guide="' + i + '"><div class="guide-card-header" onclick="this.parentElement.classList.toggle(\'open\')">' +
-              '<div class="guide-card-title"><strong>' + g.title + '</strong>' + diffBadge(g.difficulty) + '<span class="guide-time">⏱ ' + g.timeEstimate + '</span></div>' +
-              '<span class="guide-chevron">▸</span></div>' +
-              '<div class="guide-card-body"><ol class="guide-steps">' + steps + '</ol>' + video + '</div></div>';
+            let body = '';
+            if (g.type === 'video') {
+              var vid = youtubeId(g.url);
+              body = '<div class="guide-card-body">' +
+                (vid ? '<div class="guide-video"><iframe src="https://www.youtube.com/embed/' + vid + '" frameborder="0" allowfullscreen loading="lazy"></iframe></div>' : '') +
+                '<div class="guide-meta"><span class="guide-source">📺 ' + g.source + '</span></div>' +
+                '<p class="guide-summary">' + g.summary + '</p></div>';
+            } else if (g.type === 'article') {
+              body = '<div class="guide-card-body"><div class="guide-article-card">' +
+                '<div class="guide-article-info"><span class="guide-source">📄 ' + g.source + '</span>' +
+                '<p class="guide-summary">' + g.summary + '</p></div>' +
+                '<a href="' + g.url + '" target="_blank" rel="noopener" class="guide-read-btn">Read →</a></div></div>';
+            } else if (g.type === 'summary') {
+              var steps = g.steps.map((s, j) => '<li><span class="step-num">' + (j+1) + '</span>' + s + '</li>').join('');
+              body = '<div class="guide-card-body"><ol class="guide-steps-list">' + steps + '</ol></div>';
+            }
+            var icon = g.type === 'video' ? '🎬' : g.type === 'article' ? '📖' : '📋';
+            return '<div class="guide-card" data-guide="' + i + '">' +
+              '<div class="guide-card-header" onclick="this.parentElement.classList.toggle(\'open\')">' +
+              '<div class="guide-card-title"><span class="guide-type-icon">' + icon + '</span><strong>' + g.title + '</strong></div>' +
+              '<span class="guide-chevron">▸</span></div>' + body + '</div>';
           }).join('') + '</div></div>';
       }
       document.getElementById('articleContainer').innerHTML =

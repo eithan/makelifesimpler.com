@@ -1,47 +1,35 @@
 {
   "id": "instant-pot-pro-plus",
   "title": "Instant Pot Pro Plus",
-  "emoji": "🍳",
-  "summary": "Pressure cook a week of meals in one afternoon. The ultimate meal-prep time hack.",
-  "content": "<p>The Instant Pot Pro Plus replaces your slow cooker, pressure cooker, rice cooker, steamer, and yogurt maker in one countertop appliance. It's the Swiss Army knife of the kitchen, and it genuinely saves hours every week for anyone who meal preps.</p><p>The pressure cooking function is the star. What takes 8 hours in a slow cooker takes 45 minutes under pressure — with better results. Tough cuts of meat come out fall-apart tender. Dried beans cook in 30 minutes without soaking. Steel-cut oats in 12 minutes.</p><p>The Pro Plus model adds smart connectivity and a sous vide function, but the real reason to buy is the stainless steel inner pot (no non-stick coating to worry about) and the improved steam release valve. Sunday meal prep becomes almost effortless — cook three proteins, a grain, and a soup in a single afternoon.</p>",
-  "tags": [
-    "Kitchen",
-    "Cooking"
-  ],
+  "emoji": "🍲",
+  "summary": "A multi-cooker that pressure cooks, slow cooks, air fries, and more. One device replaces half your kitchen appliances.",
+  "content": "<p>The Instant Pot Pro Plus is the Swiss Army knife of kitchen appliances. It pressure cooks, slow cooks, sautés, steams, sous vides, air fries, dehydrates, and more — all in one device. It replaces a pressure cooker, slow cooker, rice cooker, yogurt maker, steamer, and air fryer.</p><p>Pressure cooking is the star feature. Meals that normally take hours are done in 30 minutes. Throw in frozen chicken, rice, and vegetables — dinner's ready before you finish answering emails. The app has hundreds of guided recipes with automatic time and pressure settings.</p><p>The build quality is excellent, cleanup is easy (the inner pot is dishwasher safe), and the safety features are robust — 13 safety mechanisms prevent the lid from opening while pressurized. It's the single most useful kitchen appliance for anyone who wants to eat well without spending hours cooking.</p>",
+  "tags": ["Kitchen", "Products"],
   "section": "products",
-  "featured": false,
   "guides": [
     {
-      "title": "Meal Prep Sunday: Learn the Basics",
-      "difficulty": "beginner",
-      "timeEstimate": "20 min to learn",
+      "title": "Instant Pot 101 for Beginners (Video)",
+      "type": "video",
+      "source": "Amy + Jacky (Pressure Cook Recipes)",
+      "url": "https://www.youtube.com/watch?v=oPbtw6pCmOo",
+      "summary": "Complete beginner's guide covering every button, first cook, and essential tips."
+    },
+    {
+      "title": "Instant Pot Getting Started Guide",
+      "type": "article",
+      "source": "Instant Pot",
+      "url": "https://instantpot.com/getting-started",
+      "summary": "Official guide with setup tips, first recipes, and care instructions."
+    },
+    {
+      "title": "Quick Overview",
+      "type": "summary",
       "steps": [
-        {
-          "text": "Download a meal prep recipe app like Mealime or Paprika",
-          "link": "https://www.mealime.com/"
-        },
-        {
-          "text": "Pick 2-3 recipes for the week and buy ingredients in bulk"
-        },
-        {
-          "text": "Start with pressure-cooked protein (chicken thighs: 12 min, pork shoulder: 45 min)"
-        },
-        {
-          "text": "Use the steam function for veggies while protein rests (broccoli: 2 min, sweet potato: 8 min)"
-        },
-        {
-          "text": "Cook grains: rice on Rice mode, quinoa 1 min pressure + 10 min natural release"
-        },
-        {
-          "text": "Portion into glass containers for the week",
-          "link": "https://www.amazon.com/dp/B09QHXC5V7"
-        },
-        {
-          "text": "Store in fridge (3-4 days) or freezer (up to 3 months)"
-        },
-        {
-          "text": "Clean up: inner pot + sealing ring are dishwasher safe"
-        }
+        "Unbox and do the initial water test (steam release check)",
+        "Download the Instant Pot app for guided recipes",
+        "Start with a simple recipe like rice or soup",
+        "Learn the pressure cook → natural release flow",
+        "Explore slow cook, air fry, and other modes"
       ]
     }
   ]

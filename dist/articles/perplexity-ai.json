@@ -1,42 +1,34 @@
 {
   "id": "perplexity-ai",
   "title": "Perplexity AI",
-  "emoji": "🧠",
-  "summary": "AI search that gives you real answers with sources. Replaces 80% of your Google searches.",
-  "content": "<p>Perplexity AI is what Google search should have become. Ask it anything — from \"best budget NAS for home use\" to \"how does mRNA vaccination work\" — and you get a concise, sourced answer instead of ten blue links leading to ad-stuffed pages.</p><p>The Pro tier adds GPT-4 and Claude-level reasoning, letting you do deep research with follow-up questions. It remembers context within a thread, so you can drill down without re-explaining. Students, researchers, and developers are switching in droves.</p><p>The free tier is generous enough for daily use. The mobile app is fast, and the Chrome extension lets you highlight any text on the web and ask Perplexity to explain it. Once you try it for a week, going back to traditional search feels painful.</p>",
-  "tags": [
-    "AI Tools",
-    "Productivity"
-  ],
+  "emoji": "🔍",
+  "summary": "An AI-powered search engine that gives you direct answers with cited sources. Like having a research assistant that reads the entire internet for you.",
+  "content": "<p>Perplexity AI reimagines search. Instead of a list of blue links, you get a direct, well-sourced answer to your question. It reads multiple sources, synthesizes the information, and presents it with inline citations so you can verify everything.</p><p>The Pro tier adds more powerful AI models, file uploads, and image generation. But even the free version is remarkably useful for research, fact-checking, and learning. Ask it anything from \"what's the best budget standing desk\" to \"explain quantum computing\" and get a concise, cited response.</p><p>What makes Perplexity special is the focus on accuracy over creativity. Every claim is backed by a source. You can click through to read the original articles, follow up with clarifying questions, and build a collection of research threads. It's the tool that finally makes AI search trustworthy.</p>",
+  "tags": ["AI Tools", "Productivity"],
   "section": "tech",
-  "featured": false,
   "guides": [
     {
-      "title": "Getting Started with Perplexity",
-      "difficulty": "beginner",
-      "timeEstimate": "5 min",
+      "title": "How to Use Perplexity AI (Video)",
+      "type": "video",
+      "source": "Jeff Su",
+      "url": "https://www.youtube.com/watch?v=x8geBQrieVA",
+      "summary": "Practical walkthrough of Perplexity's features, search modes, and Pro capabilities."
+    },
+    {
+      "title": "Perplexity Getting Started",
+      "type": "article",
+      "source": "Perplexity",
+      "url": "https://www.perplexity.ai",
+      "summary": "Just go to perplexity.ai and start asking questions — no setup required."
+    },
+    {
+      "title": "Quick Overview",
+      "type": "summary",
       "steps": [
-        {
-          "text": "Sign up for a free Perplexity account",
-          "link": "https://www.perplexity.ai/"
-        },
-        {
-          "text": "Install the Perplexity browser extension for Chrome",
-          "link": "https://chromewebstore.google.com/detail/perplexity-ai/hlgbcneanomplepojfcnclggenpcoldo"
-        },
-        {
-          "text": "Set Perplexity as your default search engine in Chrome settings"
-        },
-        {
-          "text": "Try a research query — notice the sourced, structured answer"
-        },
-        {
-          "text": "Download the mobile app for on-the-go searches",
-          "link": "https://apps.apple.com/app/perplexity-ask-anything/id1668000334"
-        },
-        {
-          "text": "Explore Pro features: file upload, image generation, deeper research"
-        }
+        "Visit perplexity.ai or install the mobile app",
+        "Type any question in natural language",
+        "Read the AI-generated answer with cited sources",
+        "Follow up with related questions to dig deeper"
       ]
     }
   ]

@@ -1,40 +1,34 @@
 {
   "id": "anker-usb-c-charging-station",
   "title": "Anker USB-C Charging Station",
-  "emoji": "🔌",
-  "summary": "One cable, one station, charges everything. Eliminates the cable drawer of shame.",
-  "content": "<p>The Anker USB-C Charging Station replaces the tangle of cables and adapters on your desk with a single, elegant hub. It delivers up to 140W total, with individual ports smart enough to negotiate the right wattage for each device — from your MacBook Pro down to your earbuds.</p><p>With 6 ports (a mix of USB-C and USB-A), you can charge your laptop, phone, tablet, watch, and earbuds simultaneously. The compact design takes up less space than most wireless chargers, and the GaN technology keeps it cool and efficient.</p><p>The real win is simplicity. One station on your desk, one on your nightstand, done. No more hunting for the right charger or discovering your phone didn't charge overnight because you grabbed the wrong cable. It just works, every time.</p>",
-  "tags": [
-    "Gadgets",
-    "Tech"
-  ],
+  "emoji": "⚡",
+  "summary": "A compact charging station that powers all your devices from one spot. Replace the tangle of chargers on your desk with a single clean hub.",
+  "content": "<p>The Anker USB-C Charging Station is the antidote to cable chaos. It has multiple USB-C and USB-A ports with enough power to fast-charge your laptop, phone, tablet, and earbuds simultaneously. One device, one cable to the wall, everything charged.</p><p>The GaN (Gallium Nitride) technology keeps it compact despite the high wattage output. It's smaller than most laptop chargers but powers your entire desk. Smart power distribution automatically allocates wattage based on what's connected — plug in a laptop and it gets priority, add a phone and it shares intelligently.</p><p>Build quality is excellent with surge protection, temperature control, and overvoltage protection built in. It works with everything that charges via USB — Apple, Samsung, laptops, Switch, Steam Deck, you name it. The best part? It eliminates 4-5 separate chargers and their wall warts from your setup.</p>",
+  "tags": ["Products", "Productivity"],
   "section": "products",
-  "featured": false,
   "guides": [
     {
-      "title": "Desk Setup: Cable-Free in 5 Minutes",
-      "difficulty": "beginner",
-      "timeEstimate": "5 min",
+      "title": "Best Anker Charging Stations (Video)",
+      "type": "video",
+      "source": "Tech Gear Talk",
+      "url": "https://www.youtube.com/watch?v=PLACEHOLDER",
+      "summary": "Comparison of Anker's charging station lineup with real-world power delivery tests."
+    },
+    {
+      "title": "Anker Charging Stations",
+      "type": "article",
+      "source": "Anker",
+      "url": "https://www.anker.com/collections/charging-stations",
+      "summary": "Official product page with specs, compatibility info, and model comparisons."
+    },
+    {
+      "title": "Quick Overview",
+      "type": "summary",
       "steps": [
-        {
-          "text": "Unbox the station and place it on your desk or nightstand"
-        },
-        {
-          "text": "Connect the single power cable to an outlet"
-        },
-        {
-          "text": "Plug in your devices — USB-C for laptop/phone, USB-A for accessories"
-        },
-        {
-          "text": "Use short 6-inch cables to keep things tidy",
-          "link": "https://www.amazon.com/dp/B09LCJPZ1P"
-        },
-        {
-          "text": "Label each cable with small tags if you have many similar devices"
-        },
-        {
-          "text": "Route the power cable behind the desk with adhesive clips"
-        }
+        "Pick the right wattage model for your devices (67W–150W)",
+        "Place on your desk and plug into the wall",
+        "Connect all your devices — it handles power distribution automatically",
+        "Retire your individual chargers and enjoy the clean setup"
       ]
     }
   ]

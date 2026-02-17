@@ -2,74 +2,34 @@
   "id": "home-assistant-matter",
   "title": "Home Assistant + Matter",
   "emoji": "🏠",
-  "summary": "Unify every smart device under one open-source hub. No more 12 different apps.",
-  "content": "<p>Home Assistant has become the gold standard for smart home control, and with Matter support built in, it's now easier than ever to bring every device under one roof. Whether you're running Hue lights, Ecobee thermostats, or Eve sensors, Matter gives them a common language — and Home Assistant speaks it fluently.</p><p>The real magic is in automations. Set your lights to dim at sunset, lock the doors when everyone leaves, and get notified if a water sensor triggers — all from a single dashboard. No cloud dependency, no subscriptions, and your data stays local.</p><p>Setup takes about an hour with a Raspberry Pi or a mini PC. Once running, you'll wonder how you ever managed a smart home without it. The community adds integrations weekly, covering everything from robot vacuums to EV chargers.</p>",
-  "tags": [
-    "Smart Home",
-    "Automation"
-  ],
+  "summary": "The open-source smart home hub that finally makes all your devices work together. With Matter support, brand lock-in is dead.",
+  "content": "<p>Home Assistant is the open-source brain of a truly smart home. It runs locally on your network, connects to over 2,000 integrations, and gives you a single dashboard for everything — lights, thermostats, cameras, locks, sensors, and more. No cloud required, no subscription fees.</p><p>The addition of Matter support is a game-changer. Matter is a universal smart home protocol backed by Apple, Google, Amazon, and Samsung. Devices that support Matter work across all platforms automatically. Home Assistant's Matter integration means you can buy any Matter-certified device and it just works — no more checking compatibility lists.</p><p>The automation engine is where Home Assistant really shines. Set up rules like \"turn off all lights when everyone leaves\" or \"start the robot vacuum when nobody's home\" using a visual editor or YAML. Combine it with voice assistants, presence detection, and energy monitoring for a home that truly runs itself.</p>",
+  "tags": ["Smart Home", "Automation"],
   "section": "tech",
-  "featured": false,
   "guides": [
     {
-      "title": "Easy: Home Assistant Green",
-      "difficulty": "beginner",
-      "timeEstimate": "20 min",
-      "steps": [
-        {
-          "text": "Buy Home Assistant Green (plug-and-play hub)",
-          "link": "https://www.home-assistant.io/green/"
-        },
-        {
-          "text": "Connect it to your router with the included Ethernet cable"
-        },
-        {
-          "text": "Open homeassistant.local:8123 in your browser and create your account"
-        },
-        {
-          "text": "Go to Settings → Devices → Add Integration → Matter"
-        },
-        {
-          "text": "Put your Matter device in pairing mode and scan the QR code"
-        },
-        {
-          "text": "Set up your first automation (e.g., lights off at bedtime)"
-        }
-      ],
-      "video": "https://youtube.com/watch?v=MnRAft6pNqs"
+      "title": "Home Assistant Beginner's Guide (Video)",
+      "type": "video",
+      "source": "Everything Smart Home",
+      "url": "https://www.youtube.com/watch?v=u_aKcf_F1MM",
+      "summary": "Comprehensive beginner walkthrough from hardware selection to first automations."
     },
     {
-      "title": "DIY: Raspberry Pi Setup",
-      "difficulty": "intermediate",
-      "timeEstimate": "45 min",
+      "title": "Official Getting Started Guide",
+      "type": "article",
+      "source": "Home Assistant",
+      "url": "https://www.home-assistant.io/getting-started/",
+      "summary": "Step-by-step installation instructions for all supported platforms."
+    },
+    {
+      "title": "Quick Overview",
+      "type": "summary",
       "steps": [
-        {
-          "text": "Download the HA OS image for Raspberry Pi 4/5",
-          "link": "https://www.home-assistant.io/installation/raspberrypi"
-        },
-        {
-          "text": "Flash the image to an SD card using Balena Etcher",
-          "link": "https://etcher.balena.io/"
-        },
-        {
-          "text": "Insert the SD card, connect Ethernet, and power on the Pi"
-        },
-        {
-          "text": "Wait 5-10 minutes for first boot, then open homeassistant.local:8123"
-        },
-        {
-          "text": "Create your account and walk through the onboarding wizard"
-        },
-        {
-          "text": "Install the Matter Server add-on from Settings → Add-ons"
-        },
-        {
-          "text": "Add a Thread/Matter-compatible USB radio if needed (SkyConnect)",
-          "link": "https://www.home-assistant.io/skyconnect/"
-        },
-        {
-          "text": "Pair your first Matter device and build automations"
-        }
+        "Get hardware (Raspberry Pi, mini PC, or Home Assistant Green)",
+        "Install Home Assistant OS from the official image",
+        "Connect devices via integrations (Wi-Fi, Zigbee, Matter)",
+        "Build automations using the visual editor",
+        "Set up dashboards and remote access"
       ]
     }
   ]

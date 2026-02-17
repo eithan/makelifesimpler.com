@@ -2,73 +2,34 @@
   "id": "shortcuts-nfc-tags",
   "title": "Shortcuts + NFC Tags",
   "emoji": "📱",
-  "summary": "Tap your phone to a $0.50 sticker to trigger any automation. Start timers, control lights, log habits.",
-  "content": "<p>NFC tags cost pennies, stick anywhere, and turn your phone into a magic wand. Pair them with Apple Shortcuts or Android's Tasker and you can trigger complex automations with a single tap — no app opening required.</p><p>Stick one on your nightstand to activate your bedtime routine: lights off, alarm set, Do Not Disturb on. Put another by the front door to log when you leave and turn off all smart devices. The possibilities are endless and the setup takes minutes per tag.</p><p>Power users chain multiple actions together — tap a tag at your desk to start a Pomodoro timer, open your task manager, and set Slack to DND. At roughly $0.30-0.50 per tag in bulk, this is the cheapest productivity upgrade you'll ever make.</p>",
-  "tags": [
-    "Automation",
-    "Smart Home"
-  ],
+  "summary": "Tap your phone on a $0.50 NFC tag to trigger complex automations. Start your morning routine, log workouts, or control your smart home with a single tap.",
+  "content": "<p>NFC tags are tiny, cheap stickers that trigger Apple Shortcuts (or Android automations) when you tap your phone on them. Stick one on your nightstand to start your morning routine, one on your desk to toggle focus mode, or one by the door to arm your security system.</p><p>The power comes from combining NFC triggers with Shortcuts automations. A single tap can: turn off all lights, set the thermostat, start a playlist, send a goodnight text, and set your alarm. Or tap when you arrive at the gym to start a workout timer, toggle Do Not Disturb, and open your exercise app.</p><p>NFC tags cost pennies — you can get a 30-pack for under $15. They need no battery, last forever, and work through stickers, keychains, and even embedded in furniture. Combined with Home Assistant or HomeKit, they become the simplest smart home interface possible: just tap.</p>",
+  "tags": ["Automation", "Smart Home"],
   "section": "tech",
-  "featured": false,
   "guides": [
     {
-      "title": "iPhone Setup with Shortcuts",
-      "difficulty": "beginner",
-      "timeEstimate": "15 min",
-      "steps": [
-        {
-          "text": "Buy NFC tags (NTAG215 recommended, ~/bin/bash.50 each)",
-          "link": "https://www.amazon.com/dp/B0727NYX3B"
-        },
-        {
-          "text": "Open the Shortcuts app on your iPhone"
-        },
-        {
-          "text": "Tap Automation → + → NFC"
-        },
-        {
-          "text": "Scan your blank NFC tag to register it"
-        },
-        {
-          "text": "Build your automation (e.g., set lights, start timer, toggle DND)"
-        },
-        {
-          "text": "Stick the tag where you want it (nightstand, desk, door frame)"
-        },
-        {
-          "text": "Tap your phone to the tag to test — done!"
-        }
-      ]
+      "title": "NFC Tags + iPhone Shortcuts (Video)",
+      "type": "video",
+      "source": "Shane Whatley",
+      "url": "https://www.youtube.com/watch?v=s3aINEsaHbY",
+      "summary": "Practical guide to programming NFC tags with Apple Shortcuts for home automation."
     },
     {
-      "title": "Android Setup with NFC Tools",
-      "difficulty": "beginner",
-      "timeEstimate": "15 min",
+      "title": "Apple Shortcuts User Guide",
+      "type": "article",
+      "source": "Apple",
+      "url": "https://support.apple.com/guide/shortcuts/intro-to-personal-automation-apd690170742/ios",
+      "summary": "Official Apple guide covering NFC triggers, automation setup, and Shortcuts basics."
+    },
+    {
+      "title": "Quick Overview",
+      "type": "summary",
       "steps": [
-        {
-          "text": "Buy NFC tags (NTAG215 recommended)",
-          "link": "https://www.amazon.com/dp/B0727NYX3B"
-        },
-        {
-          "text": "Install NFC Tools from the Play Store",
-          "link": "https://play.google.com/store/apps/details?id=com.wakdev.wdnfc"
-        },
-        {
-          "text": "Open NFC Tools → Write → Add a record"
-        },
-        {
-          "text": "Choose your action type (URL, text, or custom task)"
-        },
-        {
-          "text": "For advanced automations, install Tasker and Trigger plugin",
-          "link": "https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm"
-        },
-        {
-          "text": "Write the automation to your NFC tag"
-        },
-        {
-          "text": "Place the tag and test by tapping your phone to it"
-        }
+        "Buy NFC tags (NTAG215, ~$0.50 each)",
+        "Open Shortcuts → Automation → New → NFC",
+        "Scan the tag to register it",
+        "Build your automation actions (lights, scenes, apps, messages)",
+        "Stick the tag where you'll tap it daily"
       ]
     }
   ]

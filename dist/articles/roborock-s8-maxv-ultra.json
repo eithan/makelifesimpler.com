@@ -1,45 +1,36 @@
 {
   "id": "roborock-s8-maxv-ultra",
   "title": "Roborock S8 MaxV Ultra",
-  "emoji": "🧹",
-  "summary": "Vacuums, mops, empties itself, and washes its own pads. Saves ~4 hours/week of cleaning.",
-  "content": "<p>The Roborock S8 MaxV Ultra is the closest thing to hiring a cleaning service without actually hiring one. It vacuums carpets with 6000Pa suction, mops hard floors with a vibrating pad, and when it's done, it returns to its dock to empty the dustbin, wash the mop pads, and dry them with hot air.</p><p>The obstacle avoidance uses a camera plus structured light, so it dodges shoes, cables, and pet toys without getting stuck. You can set room-specific cleaning schedules and no-mop zones through the app. It even lifts the mop pad when it detects carpet.</p><p>Is it expensive? Yes. But if you value your time at anything above minimum wage, it pays for itself within months. Four hours a week of cleaning, reclaimed. That's 200+ hours a year you get back for things that actually matter.</p>",
-  "tags": [
-    "Home",
-    "Cleaning"
-  ],
+  "emoji": "🤖",
+  "summary": "A robot vacuum and mop that empties itself, washes its own mop pads, and navigates with AI obstacle avoidance. Set it and truly forget it.",
+  "content": "<p>The Roborock S8 MaxV Ultra is as close to a fully autonomous cleaning robot as you can get. It vacuums, mops, empties its dustbin, washes and dries its mop pads, and refills its water tank — all automatically. You genuinely just let it run and forget about it for weeks.</p><p>The AI-powered obstacle avoidance uses a camera and structured light to identify and dodge shoes, cables, pet waste, and other floor clutter. The LiDAR navigation creates precise maps of your home, letting you set no-go zones, room-specific cleaning schedules, and custom suction levels per area.</p><p>The dual rubber brushes handle everything from hardwood to carpet, and the VibraRise mopping system lifts the mop pad when it detects carpet. Integration with Home Assistant and Alexa means you can trigger cleaning from automations or voice commands. It's the single best quality-of-life upgrade for any home.</p>",
+  "tags": ["Smart Home", "Products"],
   "section": "products",
-  "featured": false,
   "guides": [
     {
-      "title": "Setup: Unbox to Clean in 15 Minutes",
-      "difficulty": "beginner",
-      "timeEstimate": "15 min",
+      "title": "Roborock S8 MaxV Ultra Review (Video)",
+      "type": "video",
+      "source": "Vacuum Wars",
+      "url": "https://www.youtube.com/watch?v=w0orTew9JHQ",
+      "summary": "In-depth review covering setup, cleaning performance, and dock features."
+    },
+    {
+      "title": "Roborock Support & Setup",
+      "type": "article",
+      "source": "Roborock",
+      "url": "https://www.roborock.com/pages/support",
+      "summary": "Official support page with setup guides, app instructions, and troubleshooting."
+    },
+    {
+      "title": "Quick Overview",
+      "type": "summary",
       "steps": [
-        {
-          "text": "Unbox and place the dock in an open area with WiFi coverage"
-        },
-        {
-          "text": "Fill the clean water tank and plug in the dock"
-        },
-        {
-          "text": "Download the Roborock app",
-          "link": "https://apps.apple.com/app/roborock/id1268688498"
-        },
-        {
-          "text": "Add the device in the app — it connects via WiFi"
-        },
-        {
-          "text": "Run the first mapping clean — the robot maps your entire home"
-        },
-        {
-          "text": "Edit room names and set up no-go / no-mop zones in the app"
-        },
-        {
-          "text": "Set your cleaning schedule (e.g., vacuum daily at 10 AM, mop MWF)"
-        }
-      ],
-      "video": "https://youtube.com/watch?v=rCjdmnLLIYs"
+        "Unbox and assemble the dock station",
+        "Download the Roborock app and add the device",
+        "Let it map your home on its first run",
+        "Set room-specific schedules and no-go zones",
+        "Optionally connect to Home Assistant or Alexa"
+      ]
     }
   ]
 }
