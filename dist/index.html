@@ -39,8 +39,9 @@
 </div>
 
 <!-- Tabs -->
-<div class="tabs" id="tabs">
-  <div class="tab active" data-tag=""><span class="emoji">🔥</span>Trending</div>
+<div id="tabsWrapper">
+  <div class="tabs" id="tabs">
+    <div class="tab active" data-tag=""><span class="emoji">🔥</span>Trending</div>
   <div class="tab" data-tag="Products"><span class="emoji">📌</span>Products</div>
   <div class="tab" data-tag="Smart Home"><span class="emoji">📌</span>Smart Home</div>
   <div class="tab" data-tag="Automation"><span class="emoji">📌</span>Automation</div>
@@ -50,8 +51,8 @@
   <div class="tab" data-tag="Kitchen"><span class="emoji">📌</span>Kitchen</div>
   <div class="tab" data-tag="Networking"><span class="emoji">📌</span>Networking</div>
   <div class="tab" data-tag="Security"><span class="emoji">📌</span>Security</div>
+  </div>
 </div>
-<div class="tabs-placeholder" id="tabsPlaceholder"></div>
 
 <div class="content">
   <!-- Featured -->
@@ -258,25 +259,22 @@
   });
 
   // Sticky tabs on scroll
+  const wrapper = document.getElementById('tabsWrapper');
   const tabsEl = document.getElementById('tabs');
-  const placeholder = document.getElementById('tabsPlaceholder');
-  let tabsTop = tabsEl.offsetTop;
 
   function updateSticky() {
-    tabsTop = placeholder.classList.contains('active') ? placeholder.offsetTop : tabsEl.offsetTop;
-    if (window.scrollY >= tabsTop) {
+    const rect = wrapper.getBoundingClientRect();
+    if (rect.top <= 0) {
       if (!tabsEl.classList.contains('sticky')) {
-        placeholder.style.height = tabsEl.offsetHeight + 'px';
-        placeholder.classList.add('active');
+        wrapper.style.minHeight = tabsEl.offsetHeight + 'px';
         tabsEl.classList.add('sticky');
       }
     } else {
       tabsEl.classList.remove('sticky');
-      placeholder.classList.remove('active');
+      wrapper.style.minHeight = '';
     }
   }
   window.addEventListener('scroll', updateSticky, { passive: true });
-  window.addEventListener('resize', function() { tabsTop = tabsEl.offsetTop; }, { passive: true });
 })();
 </script>
 <footer class="site-footer">

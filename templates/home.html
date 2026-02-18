@@ -29,10 +29,11 @@
 </div>
 
 <!-- Tabs -->
-<div class="tabs" id="tabs">
-  {{TABS}}
+<div id="tabsWrapper">
+  <div class="tabs" id="tabs">
+    {{TABS}}
+  </div>
 </div>
-<div class="tabs-placeholder" id="tabsPlaceholder"></div>
 
 <div class="content">
   <!-- Featured -->
@@ -115,24 +116,21 @@
   });
 
   // Sticky tabs on scroll
+  const wrapper = document.getElementById('tabsWrapper');
   const tabsEl = document.getElementById('tabs');
-  const placeholder = document.getElementById('tabsPlaceholder');
-  let tabsTop = tabsEl.offsetTop;
 
   function updateSticky() {
-    tabsTop = placeholder.classList.contains('active') ? placeholder.offsetTop : tabsEl.offsetTop;
-    if (window.scrollY >= tabsTop) {
+    const rect = wrapper.getBoundingClientRect();
+    if (rect.top <= 0) {
       if (!tabsEl.classList.contains('sticky')) {
-        placeholder.style.height = tabsEl.offsetHeight + 'px';
-        placeholder.classList.add('active');
+        wrapper.style.minHeight = tabsEl.offsetHeight + 'px';
         tabsEl.classList.add('sticky');
       }
     } else {
       tabsEl.classList.remove('sticky');
-      placeholder.classList.remove('active');
+      wrapper.style.minHeight = '';
     }
   }
   window.addEventListener('scroll', updateSticky, { passive: true });
-  window.addEventListener('resize', function() { tabsTop = tabsEl.offsetTop; }, { passive: true });
 })();
 </script>
