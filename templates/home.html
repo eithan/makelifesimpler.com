@@ -32,6 +32,7 @@
 <div class="tabs" id="tabs">
   {{TABS}}
 </div>
+<div class="tabs-placeholder" id="tabsPlaceholder"></div>
 
 <div class="content">
   <!-- Featured -->
@@ -112,5 +113,26 @@
       applyFilters();
     });
   });
+
+  // Sticky tabs on scroll
+  const tabsEl = document.getElementById('tabs');
+  const placeholder = document.getElementById('tabsPlaceholder');
+  let tabsTop = tabsEl.offsetTop;
+
+  function updateSticky() {
+    tabsTop = placeholder.classList.contains('active') ? placeholder.offsetTop : tabsEl.offsetTop;
+    if (window.scrollY >= tabsTop) {
+      if (!tabsEl.classList.contains('sticky')) {
+        placeholder.style.height = tabsEl.offsetHeight + 'px';
+        placeholder.classList.add('active');
+        tabsEl.classList.add('sticky');
+      }
+    } else {
+      tabsEl.classList.remove('sticky');
+      placeholder.classList.remove('active');
+    }
+  }
+  window.addEventListener('scroll', updateSticky, { passive: true });
+  window.addEventListener('resize', function() { tabsTop = tabsEl.offsetTop; }, { passive: true });
 })();
 </script>
