@@ -1,5 +1,5 @@
 <!-- Hero -->
-<div class="hero">
+<div class="hero" id="hero">
   <div class="logo">make life <span class="accent">simpler</span></div>
   <p class="tagline">Curated tools, products, and discoveries that actually save you time. No fluff, no filler — just things that work.</p>
   <div class="search-bar">
@@ -9,7 +9,7 @@
 </div>
 
 <!-- Stats -->
-<div class="stats">
+<div class="stats" id="stats">
   <div class="stat">
     <div class="num">{{TOTAL_ARTICLES}}</div>
     <div class="label">Curated Picks</div>
@@ -35,7 +35,13 @@
   </div>
 </div>
 
-<div class="content">
+<!-- Filter mode result count -->
+<div class="filter-status" id="filterStatus">
+  <span id="filterCount"></span>
+  <button class="filter-clear" id="filterClear">✕ Clear</button>
+</div>
+
+<div class="content" id="content">
   <!-- Featured -->
   {{FEATURED}}
 
@@ -43,60 +49,120 @@
   {{SECTIONS}}
 </div>
 
+<!-- Filter mode: flat card list (hidden by default) -->
+<div class="filter-results" id="filterResults"></div>
+
 <script>
 (function() {
-  // Search
-  const input = document.getElementById('searchInput');
-  const cards = document.querySelectorAll('.item-card');
+  var body = document.body;
+  var hero = document.getElementById('hero');
+  var stats = document.getElementById('stats');
+  var tabsWrapper = document.getElementById('tabsWrapper');
+  var tabsEl = document.getElementById('tabs');
+  var content = document.getElementById('content');
+  var filterStatus = document.getElementById('filterStatus');
+  var filterCount = document.getElementById('filterCount');
+  var filterClear = document.getElementById('filterClear');
+  var filterResults = document.getElementById('filterResults');
+  var input = document.getElementById('searchInput');
+  var cards = document.querySelectorAll('.item-card');
+  var tabs = document.querySelectorAll('.tab');
+  var sections = document.querySelectorAll('.section-block');
+  var trendingTab = tabs[0];
+  var activeTags = new Set();
+  var inFilterMode = false;
+
+  // Search (normal mode only)
   input.addEventListener('input', function() {
-    const q = this.value.toLowerCase();
-    cards.forEach(card => {
-      const text = card.dataset.search || '';
+    if (inFilterMode) return;
+    var q = this.value.toLowerCase();
+    cards.forEach(function(card) {
+      var text = card.dataset.search || '';
       card.style.display = text.includes(q) ? '' : 'none';
     });
-    // Hide empty sections
-    document.querySelectorAll('.section-block').forEach(section => {
-      const visible = section.querySelectorAll('.item-card:not([style*="display: none"])');
+    sections.forEach(function(section) {
+      var visible = section.querySelectorAll('.item-card:not([style*="display: none"])');
       section.style.display = visible.length ? '' : 'none';
     });
   });
 
-  // Tabs (multi-select)
-  const tabs = document.querySelectorAll('.tab');
-  const sections = document.querySelectorAll('.section-block');
-  const trendingTab = tabs[0];
-  const activeTags = new Set();
+  function enterFilterMode() {
+    if (inFilterMode) return;
+    inFilterMode = true;
+    body.classList.add('filter-mode');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
-  function applyFilters() {
-    cards.forEach(card => {
-      if (activeTags.size === 0) {
-        card.style.display = '';
-      } else {
-        const cardTags = (card.dataset.tags || '').split(',');
-        const match = [...activeTags].some(t => cardTags.includes(t));
-        card.style.display = match ? '' : 'none';
-      }
+  function exitFilterMode() {
+    if (!inFilterMode) return;
+    inFilterMode = false;
+    body.classList.remove('filter-mode');
+    filterResults.innerHTML = '';
+  }
+
+  function buildFilterCards() {
+    // Collect matching cards and clone them into the flat results area
+    var matches = [];
+    cards.forEach(function(card) {
+      var cardTags = (card.dataset.tags || '').split(',');
+      var match = Array.from(activeTags).some(function(t) { return cardTags.indexOf(t) !== -1; });
+      if (match) matches.push(card);
     });
-    sections.forEach(section => {
-      const visible = section.querySelectorAll('.item-card:not([style*="display: none"])');
-      section.style.display = visible.length ? '' : 'none';
+
+    // Update count
+    var tagNames = Array.from(activeTags).join(', ');
+    filterCount.textContent = matches.length + ' pick' + (matches.length !== 1 ? 's' : '') + ' in ' + tagNames;
+
+    // Build results
+    filterResults.innerHTML = '';
+    if (matches.length === 0) {
+      filterResults.innerHTML = '<div class="filter-empty">No picks match these filters.</div>';
+      return;
+    }
+    var grid = document.createElement('div');
+    grid.className = 'filter-grid';
+    matches.forEach(function(card) {
+      var clone = card.cloneNode(true);
+      clone.style.display = '';
+      clone.classList.add('filter-card-enter');
+      grid.appendChild(clone);
+    });
+    filterResults.appendChild(grid);
+
+    // Trigger animation
+    requestAnimationFrame(function() {
+      grid.querySelectorAll('.filter-card-enter').forEach(function(c, i) {
+        setTimeout(function() { c.classList.add('filter-card-visible'); }, i * 40);
+      });
     });
   }
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', function() {
-      const tag = this.dataset.tag;
+  function applyFilters() {
+    if (activeTags.size > 0) {
+      enterFilterMode();
+      buildFilterCards();
+    } else {
+      exitFilterMode();
+      // Reset normal view
+      cards.forEach(function(card) { card.style.display = ''; });
+      sections.forEach(function(section) { section.style.display = ''; });
+    }
+  }
 
-      // Clicking Trending clears all filters
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var tag = this.dataset.tag;
+
       if (!tag) {
+        // Trending — exit filter mode
         activeTags.clear();
-        tabs.forEach(t => t.classList.remove('active'));
+        tabs.forEach(function(t) { t.classList.remove('active'); });
         trendingTab.classList.add('active');
         applyFilters();
         return;
       }
 
-      // Toggle this tag
+      // Toggle tag
       if (activeTags.has(tag)) {
         activeTags.delete(tag);
         this.classList.remove('active');
@@ -106,7 +172,6 @@
         trendingTab.classList.remove('active');
       }
 
-      // If nothing selected, revert to Trending
       if (activeTags.size === 0) {
         trendingTab.classList.add('active');
       }
@@ -115,20 +180,26 @@
     });
   });
 
-  // Sticky tabs on scroll
-  const wrapper = document.getElementById('tabsWrapper');
-  const tabsEl = document.getElementById('tabs');
+  // Clear button
+  filterClear.addEventListener('click', function() {
+    activeTags.clear();
+    tabs.forEach(function(t) { t.classList.remove('active'); });
+    trendingTab.classList.add('active');
+    applyFilters();
+  });
 
+  // Sticky tabs on scroll (normal mode)
   function updateSticky() {
-    const rect = wrapper.getBoundingClientRect();
+    if (inFilterMode) return;
+    var rect = tabsWrapper.getBoundingClientRect();
     if (rect.top <= 0) {
       if (!tabsEl.classList.contains('sticky')) {
-        wrapper.style.minHeight = tabsEl.offsetHeight + 'px';
+        tabsWrapper.style.minHeight = tabsEl.offsetHeight + 'px';
         tabsEl.classList.add('sticky');
       }
     } else {
       tabsEl.classList.remove('sticky');
-      wrapper.style.minHeight = '';
+      tabsWrapper.style.minHeight = '';
     }
   }
   window.addEventListener('scroll', updateSticky, { passive: true });
