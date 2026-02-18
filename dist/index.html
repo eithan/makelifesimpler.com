@@ -215,6 +215,64 @@
   var activeTags = new Set();
   var inFilterMode = false;
 
+  // ── State persistence ──────────────────────────────────
+  function saveState() {
+    var state = {
+      tags: Array.from(activeTags),
+      scroll: window.scrollY
+    };
+    sessionStorage.setItem('mls_filter', JSON.stringify(state));
+  }
+
+  function clearState() {
+    sessionStorage.removeItem('mls_filter');
+  }
+
+  function restoreState() {
+    var raw = sessionStorage.getItem('mls_filter');
+    if (!raw) return;
+    try {
+      var state = JSON.parse(raw);
+      if (state.tags && state.tags.length > 0) {
+        state.tags.forEach(function(t) { activeTags.add(t); });
+        // Activate the right tab buttons
+        tabs.forEach(function(tab) {
+          if (activeTags.has(tab.dataset.tag)) {
+            tab.classList.add('active');
+          }
+        });
+        trendingTab.classList.remove('active');
+        // Enter filter mode without smooth scroll
+        inFilterMode = true;
+        body.classList.add('filter-mode');
+        buildFilterCards(true); // skip animation on restore
+        // Restore scroll position after a tick
+        if (state.scroll) {
+          requestAnimationFrame(function() {
+            window.scrollTo(0, state.scroll);
+          });
+        }
+      }
+    } catch(e) {}
+  }
+
+  // Save state before navigating away
+  window.addEventListener('beforeunload', function() {
+    if (inFilterMode) {
+      saveState();
+    } else {
+      clearState();
+    }
+  });
+
+  // Also save on click of any link (for same-origin navigations that may not fire beforeunload)
+  document.addEventListener('click', function(e) {
+    var link = e.target.closest('a');
+    if (link && inFilterMode) {
+      saveState();
+    }
+  });
+
   // Search (normal mode only)
   input.addEventListener('input', function() {
     if (inFilterMode) return;
@@ -241,10 +299,10 @@
     inFilterMode = false;
     body.classList.remove('filter-mode');
     filterResults.innerHTML = '';
+    clearState();
   }
 
-  function buildFilterCards() {
-    // Collect matching cards and clone them into the flat results area
+  function buildFilterCards(skipAnimation) {
     var matches = [];
     cards.forEach(function(card) {
       var cardTags = (card.dataset.tags || '').split(',');
@@ -252,11 +310,9 @@
       if (match) matches.push(card);
     });
 
-    // Update count
     var tagNames = Array.from(activeTags).join(', ');
     filterCount.textContent = matches.length + ' pick' + (matches.length !== 1 ? 's' : '') + ' in ' + tagNames;
 
-    // Build results
     filterResults.innerHTML = '';
     if (matches.length === 0) {
       filterResults.innerHTML = '<div class="filter-empty">No picks match these filters.</div>';
@@ -267,26 +323,30 @@
     matches.forEach(function(card) {
       var clone = card.cloneNode(true);
       clone.style.display = '';
-      clone.classList.add('filter-card-enter');
+      if (skipAnimation) {
+        clone.classList.add('filter-card-enter', 'filter-card-visible');
+      } else {
+        clone.classList.add('filter-card-enter');
+      }
       grid.appendChild(clone);
     });
     filterResults.appendChild(grid);
 
-    // Trigger animation
-    requestAnimationFrame(function() {
-      grid.querySelectorAll('.filter-card-enter').forEach(function(c, i) {
-        setTimeout(function() { c.classList.add('filter-card-visible'); }, i * 40);
+    if (!skipAnimation) {
+      requestAnimationFrame(function() {
+        grid.querySelectorAll('.filter-card-enter').forEach(function(c, i) {
+          setTimeout(function() { c.classList.add('filter-card-visible'); }, i * 40);
+        });
       });
-    });
+    }
   }
 
   function applyFilters() {
     if (activeTags.size > 0) {
       enterFilterMode();
-      buildFilterCards();
+      buildFilterCards(false);
     } else {
       exitFilterMode();
-      // Reset normal view
       cards.forEach(function(card) { card.style.display = ''; });
       sections.forEach(function(section) { section.style.display = ''; });
     }
@@ -297,7 +357,6 @@
       var tag = this.dataset.tag;
 
       if (!tag) {
-        // Trending — exit filter mode
         activeTags.clear();
         tabs.forEach(function(t) { t.classList.remove('active'); });
         trendingTab.classList.add('active');
@@ -305,7 +364,6 @@
         return;
       }
 
-      // Toggle tag
       if (activeTags.has(tag)) {
         activeTags.delete(tag);
         this.classList.remove('active');
@@ -323,7 +381,6 @@
     });
   });
 
-  // Clear button
   filterClear.addEventListener('click', function() {
     activeTags.clear();
     tabs.forEach(function(t) { t.classList.remove('active'); });
@@ -346,6 +403,9 @@
     }
   }
   window.addEventListener('scroll', updateSticky, { passive: true });
+
+  // Restore filter state on page load (back button)
+  restoreState();
 })();
 </script>
 <footer class="site-footer">
