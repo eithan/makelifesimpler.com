@@ -239,8 +239,29 @@ a { color: inherit; text-decoration: none; }
 /* Footer */
 .site-footer { text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.06); color: #4b5563; font-size: 14px; }
 
+/* See more button */
+.see-more-btn {
+  display: none;
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  background: rgba(99,102,241,0.08);
+  border: 1px solid rgba(99,102,241,0.2);
+  border-radius: 10px;
+  color: #a5b4fc;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.see-more-btn:hover { background: rgba(99,102,241,0.15); }
+
 /* Responsive */
 @media (max-width: 768px) {
+  .drop-extra { display: none; }
+  .drop-section.expanded .drop-extra { display: flex; }
+  .see-more-btn { display: block; }
+  .drop-section.expanded .see-more-btn { display: none; }
   .items-grid { grid-template-columns: 1fr; }
   .hub-grid { grid-template-columns: repeat(2, 1fr); }
   .featured { flex-direction: column; }

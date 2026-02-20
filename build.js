@@ -47,8 +47,9 @@ function scoreColor(score) {
   return 'score-red';
 }
 
-function buildCard(article, basePath) {
+function buildCard(article, basePath, extraClass) {
   basePath = basePath || '';
+  extraClass = extraClass || '';
   const searchText = [article.title, article.summary, ...article.tags].join(' ').toLowerCase();
   const tagsData = [article.hub, ...article.tags].join(',');
   const score = article.simplicityScore ? article.simplicityScore.score : null;
@@ -57,7 +58,7 @@ function buildCard(article, basePath) {
     : '';
   const hubClass = article.hub || article.section || '';
   return `
-    <a href="${basePath}article.html?id=${article.id}" class="item-card" data-search="${searchText}" data-tags="${tagsData}">
+    <a href="${basePath}article.html?id=${article.id}" class="item-card${extraClass}" data-search="${searchText}" data-tags="${tagsData}">
       <div class="item-icon ${hubClass}">${article.emoji}</div>
       <div class="item-info">
         <h4>${article.title} ${scoreBadge}</h4>
@@ -96,6 +97,7 @@ function buildDropSection(drop, label) {
     .map(id => articles.find(a => a.id === id))
     .filter(Boolean);
   if (dropArticles.length === 0) return '';
+  const cards = dropArticles.map((a, i) => buildCard(a, '', i >= 4 ? ' drop-extra' : ''));
   return `
   <div class="section-block drop-section">
     <div class="section-header">
@@ -103,8 +105,9 @@ function buildDropSection(drop, label) {
       <span class="drop-date">${drop.date}</span>
     </div>
     <div class="items-grid">
-      ${dropArticles.map(a => buildCard(a)).join('')}
+      ${cards.join('')}
     </div>
+    ${dropArticles.length > 4 ? '<button class="see-more-btn" onclick="this.parentElement.classList.add(\'expanded\');this.remove();">See more ↓</button>' : ''}
   </div>`;
 }
 
