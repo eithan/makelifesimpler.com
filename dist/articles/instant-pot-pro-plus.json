@@ -1,9 +1,9 @@
 {
   "id": "instant-pot-pro-plus",
   "title": "Instant Pot Pro Plus",
-  "emoji": "🍲",
+  "emoji": "\ud83c\udf72",
   "summary": "A multi-cooker that pressure cooks, slow cooks, air fries, and more. One device replaces half your kitchen appliances.",
-  "content": "<p>The Instant Pot Pro Plus is the Swiss Army knife of kitchen appliances. It pressure cooks, slow cooks, sautés, steams, sous vides, air fries, dehydrates, and more — all in one device. It replaces a pressure cooker, slow cooker, rice cooker, yogurt maker, steamer, and air fryer.</p><p>Pressure cooking is the star feature. Meals that normally take hours are done in 30 minutes. Throw in frozen chicken, rice, and vegetables — dinner's ready before you finish answering emails. The app has hundreds of guided recipes with automatic time and pressure settings.</p><p>The build quality is excellent, cleanup is easy (the inner pot is dishwasher safe), and the safety features are robust — 13 safety mechanisms prevent the lid from opening while pressurized. It's the single most useful kitchen appliance for anyone who wants to eat well without spending hours cooking.</p>",
+  "content": "<p>The Instant Pot Pro Plus is the Swiss Army knife of kitchen appliances. It pressure cooks, slow cooks, saut\u00e9s, steams, sous vides, air fries, dehydrates, and more \u2014 all in one device. It replaces a pressure cooker, slow cooker, rice cooker, yogurt maker, steamer, and air fryer.</p><p>Pressure cooking is the star feature. Meals that normally take hours are done in 30 minutes. Throw in frozen chicken, rice, and vegetables \u2014 dinner's ready before you finish answering emails. The app has hundreds of guided recipes with automatic time and pressure settings.</p><p>The build quality is excellent, cleanup is easy (the inner pot is dishwasher safe), and the safety features are robust \u2014 13 safety mechanisms prevent the lid from opening while pressurized. It's the single most useful kitchen appliance for anyone who wants to eat well without spending hours cooking.</p>",
   "tags": [
     "Kitchen",
     "Products"
@@ -31,16 +31,16 @@
         "Unbox and do the initial water test (steam release check)",
         "Download the Instant Pot app for guided recipes",
         "Start with a simple recipe like rice or soup",
-        "Learn the pressure cook → natural release flow",
+        "Learn the pressure cook \u2192 natural release flow",
         "Explore slow cook, air fry, and other modes"
       ]
     }
   ],
   "hub": "kitchen-tech",
   "simplicityScore": {
+    "score": 7.4,
     "timeSaved": 7,
-    "setupEffort": 2,
-    "score": 7.3
+    "easeOfSetup": 8
   },
   "frictionNote": "Learning curve for pressure cooking times. Sealing ring absorbs smells. Takes up counter space.",
   "dropId": null

@@ -1,7 +1,7 @@
 {
   "id": "perplexity-ai",
   "title": "Perplexity AI",
-  "emoji": "🔍",
+  "emoji": "\ud83d\udd0d",
   "summary": "An AI-powered search engine that gives you direct answers with cited sources. Like having a research assistant that reads the entire internet for you.",
   "content": "<p>Perplexity AI reimagines search. Instead of a list of blue links, you get a direct, well-sourced answer to your question. It reads multiple sources, synthesizes the information, and presents it with inline citations so you can verify everything.</p><p>The Pro tier adds more powerful AI models, file uploads, and image generation. But even the free version is remarkably useful for research, fact-checking, and learning. Ask it anything from \"what's the best budget standing desk\" to \"explain quantum computing\" and get a concise, cited response.</p><p>What makes Perplexity special is the focus on accuracy over creativity. Every claim is backed by a source. You can click through to read the original articles, follow up with clarifying questions, and build a collection of research threads. It's the tool that finally makes AI search trustworthy.</p>",
   "tags": [
@@ -22,7 +22,7 @@
       "type": "article",
       "source": "Perplexity",
       "url": "https://www.perplexity.ai",
-      "summary": "Just go to perplexity.ai and start asking questions — no setup required."
+      "summary": "Just go to perplexity.ai and start asking questions \u2014 no setup required."
     },
     {
       "title": "Quick Overview",
@@ -37,9 +37,9 @@
   ],
   "hub": "ai-tools",
   "simplicityScore": {
+    "score": 8.4,
     "timeSaved": 8,
-    "setupEffort": 1,
-    "score": 8.3
+    "easeOfSetup": 9
   },
   "frictionNote": "Free tier has daily limits. Pro is $20/month which adds up. Sometimes hallucinates sources.",
   "dropId": "2026-W08"

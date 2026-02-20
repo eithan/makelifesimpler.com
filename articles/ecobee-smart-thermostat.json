@@ -1,14 +1,21 @@
 {
   "id": "ecobee-smart-thermostat",
-  "title": "Ecobee Smart Thermostat Premium — Set It and Forget It",
-  "emoji": "🌡️",
+  "title": "Ecobee Smart Thermostat Premium \u2014 Set It and Forget It",
+  "emoji": "\ud83c\udf21\ufe0f",
   "summary": "A thermostat with room sensors, built-in air quality monitoring, and smart scheduling that learns your routine.",
-  "content": "<p>The Ecobee Premium goes beyond basic smart thermostats by including wireless room sensors. Place them in the rooms you actually use, and the thermostat adjusts based on occupancy and temperature where it matters — not just where the thermostat is mounted. This alone fixes the biggest problem with central heating and cooling.</p><p>Built-in air quality monitoring tracks indoor air health and alerts you when ventilation is needed. The built-in speaker doubles as a smart speaker (Alexa built-in) and intercom. Geofencing automatically adjusts when everyone leaves and pre-conditions before you return.</p><p>The energy reports show exactly where your money goes and suggest optimizations. Most users report 20-25% savings on heating and cooling bills, which means the thermostat pays for itself within a year.</p>",
-  "tags": ["Smart Home", "Energy"],
+  "content": "<p>The Ecobee Premium goes beyond basic smart thermostats by including wireless room sensors. Place them in the rooms you actually use, and the thermostat adjusts based on occupancy and temperature where it matters \u2014 not just where the thermostat is mounted. This alone fixes the biggest problem with central heating and cooling.</p><p>Built-in air quality monitoring tracks indoor air health and alerts you when ventilation is needed. The built-in speaker doubles as a smart speaker (Alexa built-in) and intercom. Geofencing automatically adjusts when everyone leaves and pre-conditions before you return.</p><p>The energy reports show exactly where your money goes and suggest optimizations. Most users report 20-25% savings on heating and cooling bills, which means the thermostat pays for itself within a year.</p>",
+  "tags": [
+    "Smart Home",
+    "Energy"
+  ],
   "hub": "smart-home",
   "section": "products",
   "featured": false,
-  "simplicityScore": { "score": 7, "setup": "Moderate", "learning": "Low", "maintenance": "Low" },
+  "simplicityScore": {
+    "score": 6.6,
+    "timeSaved": 7,
+    "easeOfSetup": 6
+  },
   "frictionNote": "Installation requires basic wiring knowledge or a professional install (~$75). Needs a C-wire or the included power extender kit.",
   "guides": []
 }

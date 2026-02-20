@@ -1,9 +1,9 @@
 {
   "id": "shortcuts-nfc-tags",
   "title": "Shortcuts + NFC Tags",
-  "emoji": "📱",
+  "emoji": "\ud83d\udcf1",
   "summary": "Tap your phone on a $0.50 NFC tag to trigger complex automations. Start your morning routine, log workouts, or control your smart home with a single tap.",
-  "content": "<p>NFC tags are tiny, cheap stickers that trigger Apple Shortcuts (or Android automations) when you tap your phone on them. Stick one on your nightstand to start your morning routine, one on your desk to toggle focus mode, or one by the door to arm your security system.</p><p>The power comes from combining NFC triggers with Shortcuts automations. A single tap can: turn off all lights, set the thermostat, start a playlist, send a goodnight text, and set your alarm. Or tap when you arrive at the gym to start a workout timer, toggle Do Not Disturb, and open your exercise app.</p><p>NFC tags cost pennies — you can get a 30-pack for under $15. They need no battery, last forever, and work through stickers, keychains, and even embedded in furniture. Combined with Home Assistant or HomeKit, they become the simplest smart home interface possible: just tap.</p>",
+  "content": "<p>NFC tags are tiny, cheap stickers that trigger Apple Shortcuts (or Android automations) when you tap your phone on them. Stick one on your nightstand to start your morning routine, one on your desk to toggle focus mode, or one by the door to arm your security system.</p><p>The power comes from combining NFC triggers with Shortcuts automations. A single tap can: turn off all lights, set the thermostat, start a playlist, send a goodnight text, and set your alarm. Or tap when you arrive at the gym to start a workout timer, toggle Do Not Disturb, and open your exercise app.</p><p>NFC tags cost pennies \u2014 you can get a 30-pack for under $15. They need no battery, last forever, and work through stickers, keychains, and even embedded in furniture. Combined with Home Assistant or HomeKit, they become the simplest smart home interface possible: just tap.</p>",
   "tags": [
     "Automation",
     "Smart Home"
@@ -29,7 +29,7 @@
       "type": "summary",
       "steps": [
         "Buy NFC tags (NTAG215, ~$0.50 each)",
-        "Open Shortcuts → Automation → New → NFC",
+        "Open Shortcuts \u2192 Automation \u2192 New \u2192 NFC",
         "Scan the tag to register it",
         "Build your automation actions (lights, scenes, apps, messages)",
         "Stick the tag where you'll tap it daily"
@@ -38,9 +38,9 @@
   ],
   "hub": "smart-home",
   "simplicityScore": {
+    "score": 6.4,
     "timeSaved": 6,
-    "setupEffort": 3,
-    "score": 6.3
+    "easeOfSetup": 7
   },
   "frictionNote": "iPhone-centric. Android support is clunkier. Tags need precise phone placement to scan.",
   "dropId": null

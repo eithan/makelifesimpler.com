@@ -1,14 +1,21 @@
 {
   "id": "notion-calendar",
-  "title": "Notion Calendar — Finally, a Calendar That Thinks",
-  "emoji": "📅",
+  "title": "Notion Calendar \u2014 Finally, a Calendar That Thinks",
+  "emoji": "\ud83d\udcc5",
   "summary": "A calendar app that connects to your Notion workspace, auto-blocks focus time, and actually understands your schedule.",
-  "content": "<p>Notion Calendar (formerly Cron) merges your calendar with your project management. It pulls tasks from Notion databases, suggests time blocks, and lets you RSVP to meetings without leaving the app. The scheduling links feature alone replaces Calendly for most people.</p><p>What makes it stand out is the keyboard-first design. Every action has a shortcut, so power users fly through scheduling. It syncs with Google Calendar and supports multiple time zones natively — ideal for remote teams. The menu bar widget on Mac gives you a glanceable view of your day without opening anything.</p><p>The integration with Notion is the real killer feature. Create a task in Notion, drag it onto your calendar, and it's scheduled. Complete it in either place and it syncs. If you're already in the Notion ecosystem, this is the missing piece.</p>",
-  "tags": ["Productivity", "Calendar"],
+  "content": "<p>Notion Calendar (formerly Cron) merges your calendar with your project management. It pulls tasks from Notion databases, suggests time blocks, and lets you RSVP to meetings without leaving the app. The scheduling links feature alone replaces Calendly for most people.</p><p>What makes it stand out is the keyboard-first design. Every action has a shortcut, so power users fly through scheduling. It syncs with Google Calendar and supports multiple time zones natively \u2014 ideal for remote teams. The menu bar widget on Mac gives you a glanceable view of your day without opening anything.</p><p>The integration with Notion is the real killer feature. Create a task in Notion, drag it onto your calendar, and it's scheduled. Complete it in either place and it syncs. If you're already in the Notion ecosystem, this is the missing piece.</p>",
+  "tags": [
+    "Productivity",
+    "Calendar"
+  ],
   "hub": "digital-productivity",
   "section": "tech",
   "featured": false,
-  "simplicityScore": { "score": 8, "setup": "Easy", "learning": "Low", "maintenance": "None" },
+  "simplicityScore": {
+    "score": 7.8,
+    "timeSaved": 7,
+    "easeOfSetup": 9
+  },
   "frictionNote": "Requires a Notion account to unlock full integration. Standalone calendar features are still solid without one.",
   "guides": []
 }

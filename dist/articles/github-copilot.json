@@ -1,14 +1,21 @@
 {
   "id": "github-copilot",
-  "title": "GitHub Copilot — Your AI Pair Programmer",
-  "emoji": "🧑‍💻",
+  "title": "GitHub Copilot \u2014 Your AI Pair Programmer",
+  "emoji": "\ud83e\uddd1\u200d\ud83d\udcbb",
   "summary": "AI-powered code completion that lives in your editor. It writes functions, tests, and boilerplate so you can focus on the hard problems.",
-  "content": "<p>GitHub Copilot uses OpenAI's models to suggest code as you type. It's not just autocomplete — it understands context across your entire file and project. Write a comment describing what you want, and Copilot generates the implementation. It handles boilerplate, repetitive patterns, and even complex algorithms with surprising accuracy.</p><p>The chat feature lets you ask questions about your codebase, debug errors, and refactor code without leaving your editor. It supports VS Code, JetBrains, Neovim, and Xcode. The workspace indexing means it understands your project structure, not just the current file.</p><p>For professional developers, the time savings are real — studies show 30-55% faster task completion. For learners, it's like having a senior developer looking over your shoulder, explaining patterns and suggesting best practices.</p>",
-  "tags": ["AI Tools", "Developer Tools"],
+  "content": "<p>GitHub Copilot uses OpenAI's models to suggest code as you type. It's not just autocomplete \u2014 it understands context across your entire file and project. Write a comment describing what you want, and Copilot generates the implementation. It handles boilerplate, repetitive patterns, and even complex algorithms with surprising accuracy.</p><p>The chat feature lets you ask questions about your codebase, debug errors, and refactor code without leaving your editor. It supports VS Code, JetBrains, Neovim, and Xcode. The workspace indexing means it understands your project structure, not just the current file.</p><p>For professional developers, the time savings are real \u2014 studies show 30-55% faster task completion. For learners, it's like having a senior developer looking over your shoulder, explaining patterns and suggesting best practices.</p>",
+  "tags": [
+    "AI Tools",
+    "Developer Tools"
+  ],
   "hub": "ai-tools",
   "section": "tech",
   "featured": false,
-  "simplicityScore": { "score": 9, "setup": "Easy", "learning": "Low", "maintenance": "None" },
+  "simplicityScore": {
+    "score": 9.0,
+    "timeSaved": 9,
+    "easeOfSetup": 9
+  },
   "frictionNote": "$10/month after free trial. Free for students and open-source maintainers.",
   "guides": []
 }

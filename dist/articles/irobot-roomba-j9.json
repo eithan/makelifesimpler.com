@@ -1,14 +1,21 @@
 {
   "id": "irobot-roomba-j9",
-  "title": "iRobot Roomba j9+ — The Robot Vacuum That Actually Works",
-  "emoji": "🤖",
+  "title": "iRobot Roomba j9+ \u2014 The Robot Vacuum That Actually Works",
+  "emoji": "\ud83e\udd16",
   "summary": "Self-emptying robot vacuum with obstacle avoidance smart enough to dodge pet accidents, shoes, and cords.",
-  "content": "<p>The Roomba j9+ represents iRobot's best obstacle avoidance yet. Its P.O.O.P. (Pet Owner Official Promise) guarantee means if it runs over pet waste, they replace it free. But the avoidance is so good it rarely comes to that — it identifies and dodges shoes, cords, socks, and other floor clutter with remarkable accuracy.</p><p>The self-emptying Clean Base holds up to 60 days of debris, so you genuinely forget about vacuuming. Smart mapping learns your floor plan and lets you send it to specific rooms via voice or app. It automatically increases suction on carpets and adjusts cleaning patterns based on dirt detection.</p><p>Scheduling is fully automated — it suggests cleaning times based on your routine, pollen season, and even when you have pets shedding more. It integrates with Alexa, Google Home, and IFTTT for broader smart home automation.</p>",
-  "tags": ["Cleaning", "Smart Home"],
+  "content": "<p>The Roomba j9+ represents iRobot's best obstacle avoidance yet. Its P.O.O.P. (Pet Owner Official Promise) guarantee means if it runs over pet waste, they replace it free. But the avoidance is so good it rarely comes to that \u2014 it identifies and dodges shoes, cords, socks, and other floor clutter with remarkable accuracy.</p><p>The self-emptying Clean Base holds up to 60 days of debris, so you genuinely forget about vacuuming. Smart mapping learns your floor plan and lets you send it to specific rooms via voice or app. It automatically increases suction on carpets and adjusts cleaning patterns based on dirt detection.</p><p>Scheduling is fully automated \u2014 it suggests cleaning times based on your routine, pollen season, and even when you have pets shedding more. It integrates with Alexa, Google Home, and IFTTT for broader smart home automation.</p>",
+  "tags": [
+    "Cleaning",
+    "Smart Home"
+  ],
   "hub": "cleaning-tech",
   "section": "products",
   "featured": false,
-  "simplicityScore": { "score": 9, "setup": "Easy", "learning": "None", "maintenance": "Low" },
+  "simplicityScore": {
+    "score": 8.4,
+    "timeSaved": 8,
+    "easeOfSetup": 9
+  },
   "frictionNote": "Expensive at ~$800. The Clean Base is large and needs a wall outlet with clearance. Maps take 2-3 runs to fully learn your space.",
   "guides": []
 }

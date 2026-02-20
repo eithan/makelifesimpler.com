@@ -1,14 +1,21 @@
 {
   "id": "wise-transfers",
-  "title": "Wise — International Money Without the Bank Markup",
-  "emoji": "💸",
+  "title": "Wise \u2014 International Money Without the Bank Markup",
+  "emoji": "\ud83d\udcb8",
   "summary": "Send money abroad at the real exchange rate. Hold 40+ currencies. Get local bank details in multiple countries.",
-  "content": "<p>Wise (formerly TransferWise) solves the hidden fee problem with international money transfers. Banks typically mark up exchange rates by 3-5% on top of their transfer fees. Wise uses the mid-market rate — the real one you see on Google — and charges a small, transparent fee upfront. For a $1,000 transfer, you might save $30-50 compared to a traditional bank.</p><p>The multi-currency account is where it gets powerful. You get local bank details in USD, EUR, GBP, AUD, and more — meaning you can receive payments like a local in those countries. Freelancers and remote workers use this to avoid conversion fees entirely by invoicing in the client's currency.</p><p>The debit card spends in any currency at the real exchange rate, making it the best travel card for most people. Auto-conversions let you set target rates and convert automatically when the market hits your number.</p>",
-  "tags": ["Finance", "Travel"],
+  "content": "<p>Wise (formerly TransferWise) solves the hidden fee problem with international money transfers. Banks typically mark up exchange rates by 3-5% on top of their transfer fees. Wise uses the mid-market rate \u2014 the real one you see on Google \u2014 and charges a small, transparent fee upfront. For a $1,000 transfer, you might save $30-50 compared to a traditional bank.</p><p>The multi-currency account is where it gets powerful. You get local bank details in USD, EUR, GBP, AUD, and more \u2014 meaning you can receive payments like a local in those countries. Freelancers and remote workers use this to avoid conversion fees entirely by invoicing in the client's currency.</p><p>The debit card spends in any currency at the real exchange rate, making it the best travel card for most people. Auto-conversions let you set target rates and convert automatically when the market hits your number.</p>",
+  "tags": [
+    "Finance",
+    "Travel"
+  ],
   "hub": "financial-automation",
   "section": "tech",
   "featured": false,
-  "simplicityScore": { "score": 9, "setup": "Easy", "learning": "Low", "maintenance": "None" },
+  "simplicityScore": {
+    "score": 8.4,
+    "timeSaved": 8,
+    "easeOfSetup": 9
+  },
   "frictionNote": "Identity verification required (standard KYC). Some countries have limited features. Large transfers may take 1-2 business days.",
   "guides": []
 }

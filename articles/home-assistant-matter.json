@@ -1,9 +1,9 @@
 {
   "id": "home-assistant-matter",
   "title": "Home Assistant + Matter",
-  "emoji": "🏠",
+  "emoji": "\ud83c\udfe0",
   "summary": "The open-source smart home hub that finally makes all your devices work together. With Matter support, brand lock-in is dead.",
-  "content": "<p>Home Assistant is the open-source brain of a truly smart home. It runs locally on your network, connects to over 2,000 integrations, and gives you a single dashboard for everything — lights, thermostats, cameras, locks, sensors, and more. No cloud required, no subscription fees.</p><p>The addition of Matter support is a game-changer. Matter is a universal smart home protocol backed by Apple, Google, Amazon, and Samsung. Devices that support Matter work across all platforms automatically. Home Assistant's Matter integration means you can buy any Matter-certified device and it just works — no more checking compatibility lists.</p><p>The automation engine is where Home Assistant really shines. Set up rules like \"turn off all lights when everyone leaves\" or \"start the robot vacuum when nobody's home\" using a visual editor or YAML. Combine it with voice assistants, presence detection, and energy monitoring for a home that truly runs itself.</p>",
+  "content": "<p>Home Assistant is the open-source brain of a truly smart home. It runs locally on your network, connects to over 2,000 integrations, and gives you a single dashboard for everything \u2014 lights, thermostats, cameras, locks, sensors, and more. No cloud required, no subscription fees.</p><p>The addition of Matter support is a game-changer. Matter is a universal smart home protocol backed by Apple, Google, Amazon, and Samsung. Devices that support Matter work across all platforms automatically. Home Assistant's Matter integration means you can buy any Matter-certified device and it just works \u2014 no more checking compatibility lists.</p><p>The automation engine is where Home Assistant really shines. Set up rules like \"turn off all lights when everyone leaves\" or \"start the robot vacuum when nobody's home\" using a visual editor or YAML. Combine it with voice assistants, presence detection, and energy monitoring for a home that truly runs itself.</p>",
   "tags": [
     "Smart Home",
     "Automation"
@@ -38,9 +38,9 @@
   ],
   "hub": "smart-home",
   "simplicityScore": {
+    "score": 7.0,
     "timeSaved": 9,
-    "setupEffort": 6,
-    "score": 7.5
+    "easeOfSetup": 4
   },
   "frictionNote": "Steep learning curve. YAML configs can be frustrating. Matter support is still maturing.",
   "dropId": "2026-W08"

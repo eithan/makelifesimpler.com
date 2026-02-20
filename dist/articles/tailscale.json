@@ -1,9 +1,9 @@
 {
   "id": "tailscale",
   "title": "Tailscale",
-  "emoji": "🔒",
+  "emoji": "\ud83d\udd12",
   "summary": "A zero-config VPN that connects all your devices into a secure private network. Access your home server, NAS, or Raspberry Pi from anywhere.",
-  "content": "<p>Tailscale makes networking simple. Install it on any device, sign in, and suddenly all your devices can talk to each other securely — no port forwarding, no firewall rules, no dynamic DNS. It uses WireGuard under the hood for blazing-fast encrypted connections.</p><p>The magic is in the simplicity. Want to SSH into your home server from a coffee shop? Just use its Tailscale IP. Want to access your Home Assistant dashboard remotely? It's already there. Tailscale creates a mesh VPN where every device connects directly to every other device, with no central server bottleneck.</p><p>The free tier is generous — up to 100 devices and 3 users. Features like MagicDNS give your devices memorable names, subnet routers let you access your entire home network, and exit nodes let you route all traffic through a specific device. It's the networking tool that makes everything else possible.</p>",
+  "content": "<p>Tailscale makes networking simple. Install it on any device, sign in, and suddenly all your devices can talk to each other securely \u2014 no port forwarding, no firewall rules, no dynamic DNS. It uses WireGuard under the hood for blazing-fast encrypted connections.</p><p>The magic is in the simplicity. Want to SSH into your home server from a coffee shop? Just use its Tailscale IP. Want to access your Home Assistant dashboard remotely? It's already there. Tailscale creates a mesh VPN where every device connects directly to every other device, with no central server bottleneck.</p><p>The free tier is generous \u2014 up to 100 devices and 3 users. Features like MagicDNS give your devices memorable names, subnet routers let you access your entire home network, and exit nodes let you route all traffic through a specific device. It's the networking tool that makes everything else possible.</p>",
   "tags": [
     "Networking",
     "Security"
@@ -30,16 +30,16 @@
       "steps": [
         "Sign up at tailscale.com with Google, Microsoft, or GitHub",
         "Install the Tailscale app on each device",
-        "Log in — devices automatically join your private network",
+        "Log in \u2014 devices automatically join your private network",
         "Access any device by its Tailscale IP or MagicDNS name"
       ]
     }
   ],
   "hub": "networking",
   "simplicityScore": {
+    "score": 8.0,
     "timeSaved": 8,
-    "setupEffort": 2,
-    "score": 8
+    "easeOfSetup": 8
   },
   "frictionNote": "Free tier limited to 3 users. Some corporate firewalls block it. Requires account on all devices.",
   "dropId": null
