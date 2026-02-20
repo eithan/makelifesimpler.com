@@ -12,18 +12,25 @@
 <div class="hero" id="hero">
   <div class="logo">make life <span class="accent">simpler</span></div>
   <p class="tagline">Curated tools, products, and discoveries that actually save you time. No fluff, no filler — just things that work.</p>
+  <nav class="hero-nav">
+    <a href="#this-week">This Week</a>
+    <span class="hero-nav-dot">·</span>
+    <a href="#categories">Categories</a>
+    <span class="hero-nav-dot">·</span>
+    <a href="#last-week">Last Week</a>
+  </nav>
 </div>
 
 <!-- Stats -->
 <div class="stats" id="stats">
-  <div class="stat">
+  <a href="#this-week" class="stat">
     <div class="num">16</div>
     <div class="label">Curated Picks</div>
-  </div>
-  <div class="stat">
+  </a>
+  <a href="#categories" class="stat">
     <div class="num">9</div>
     <div class="label">Categories</div>
-  </div>
+  </a>
   <div class="stat">
     <div class="num">9K+</div>
     <div class="label">People Helped</div>
@@ -48,6 +55,7 @@
   </a>
 
   <!-- This Week -->
+  <div id="this-week"></div>
   
   <div class="section-block drop-section">
     <div class="section-header">
@@ -148,7 +156,7 @@
   </div>
 
   <!-- Browse by Category -->
-  <div class="section-block">
+  <div class="section-block" id="categories">
     <div class="section-header">
       <h2><span class="emoji">🗂️</span>Browse by Category</h2>
     </div>
@@ -203,6 +211,7 @@
   </div>
 
   <!-- Last Week -->
+  <div id="last-week"></div>
   
   <div class="section-block drop-section">
     <div class="section-header">
