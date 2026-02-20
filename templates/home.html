@@ -2,10 +2,6 @@
 <div class="hero" id="hero">
   <div class="logo">make life <span class="accent">simpler</span></div>
   <p class="tagline">Curated tools, products, and discoveries that actually save you time. No fluff, no filler — just things that work.</p>
-  <div class="search-bar">
-    <span class="icon">🔍</span>
-    <input type="text" id="searchInput" placeholder="Search {{TOTAL_ARTICLES}}+ curated recommendations...">
-  </div>
 </div>
 
 <!-- Stats -->
@@ -15,7 +11,7 @@
     <div class="label">Curated Picks</div>
   </div>
   <div class="stat">
-    <div class="num">{{TOTAL_TAGS}}</div>
+    <div class="num">{{TOTAL_HUBS}}</div>
     <div class="label">Categories</div>
   </div>
   <div class="stat">
@@ -28,240 +24,23 @@
   </div>
 </div>
 
-<!-- Tabs -->
-<div id="tabsWrapper">
-  <div class="tabs" id="tabs">
-    {{TABS}}
-  </div>
-</div>
-
-<!-- Filter mode result count -->
-<div class="filter-status" id="filterStatus">
-  <span id="filterCount"></span>
-  <button class="filter-clear" id="filterClear">✕ Clear</button>
-</div>
-
 <div class="content" id="content">
-  <!-- Featured -->
+  <!-- Featured Pick -->
   {{FEATURED}}
 
-  <!-- Sections -->
-  {{SECTIONS}}
+  <!-- This Week -->
+  {{THIS_WEEK}}
+
+  <!-- Browse by Category -->
+  <div class="section-block">
+    <div class="section-header">
+      <h2><span class="emoji">🗂️</span>Browse by Category</h2>
+    </div>
+    <div class="hub-grid">
+      {{HUB_CARDS}}
+    </div>
+  </div>
+
+  <!-- Last Week -->
+  {{LAST_WEEK}}
 </div>
-
-<!-- Filter mode: flat card list (hidden by default) -->
-<div class="filter-results" id="filterResults"></div>
-
-<script>
-(function() {
-  var body = document.body;
-  var hero = document.getElementById('hero');
-  var stats = document.getElementById('stats');
-  var tabsWrapper = document.getElementById('tabsWrapper');
-  var tabsEl = document.getElementById('tabs');
-  var content = document.getElementById('content');
-  var filterStatus = document.getElementById('filterStatus');
-  var filterCount = document.getElementById('filterCount');
-  var filterClear = document.getElementById('filterClear');
-  var filterResults = document.getElementById('filterResults');
-  var input = document.getElementById('searchInput');
-  var cards = document.querySelectorAll('.item-card');
-  var tabs = document.querySelectorAll('.tab');
-  var sections = document.querySelectorAll('.section-block');
-  var trendingTab = tabs[0];
-  var activeTags = new Set();
-  var inFilterMode = false;
-
-  // ── State persistence ──────────────────────────────────
-  function saveState() {
-    var state = {
-      tags: Array.from(activeTags),
-      scroll: window.scrollY
-    };
-    sessionStorage.setItem('mls_filter', JSON.stringify(state));
-  }
-
-  function clearState() {
-    sessionStorage.removeItem('mls_filter');
-  }
-
-  function restoreState() {
-    var raw = sessionStorage.getItem('mls_filter');
-    if (!raw) return;
-    try {
-      var state = JSON.parse(raw);
-      if (state.tags && state.tags.length > 0) {
-        state.tags.forEach(function(t) { activeTags.add(t); });
-        // Activate the right tab buttons
-        tabs.forEach(function(tab) {
-          if (activeTags.has(tab.dataset.tag)) {
-            tab.classList.add('active');
-          }
-        });
-        trendingTab.classList.remove('active');
-        // Enter filter mode without smooth scroll
-        inFilterMode = true;
-        body.classList.add('filter-mode');
-        buildFilterCards(true); // skip animation on restore
-        // Restore scroll position after a tick
-        if (state.scroll) {
-          requestAnimationFrame(function() {
-            window.scrollTo(0, state.scroll);
-          });
-        }
-      }
-    } catch(e) {}
-  }
-
-  // Save state before navigating away
-  window.addEventListener('beforeunload', function() {
-    if (inFilterMode) {
-      saveState();
-    } else {
-      clearState();
-    }
-  });
-
-  // Also save on click of any link (for same-origin navigations that may not fire beforeunload)
-  document.addEventListener('click', function(e) {
-    var link = e.target.closest('a');
-    if (link && inFilterMode) {
-      saveState();
-    }
-  });
-
-  // Search (normal mode only)
-  input.addEventListener('input', function() {
-    if (inFilterMode) return;
-    var q = this.value.toLowerCase();
-    cards.forEach(function(card) {
-      var text = card.dataset.search || '';
-      card.style.display = text.includes(q) ? '' : 'none';
-    });
-    sections.forEach(function(section) {
-      var visible = section.querySelectorAll('.item-card:not([style*="display: none"])');
-      section.style.display = visible.length ? '' : 'none';
-    });
-  });
-
-  function enterFilterMode() {
-    if (inFilterMode) return;
-    inFilterMode = true;
-    body.classList.add('filter-mode');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  function exitFilterMode() {
-    if (!inFilterMode) return;
-    inFilterMode = false;
-    body.classList.remove('filter-mode');
-    filterResults.innerHTML = '';
-    clearState();
-  }
-
-  function buildFilterCards(skipAnimation) {
-    var matches = [];
-    cards.forEach(function(card) {
-      var cardTags = (card.dataset.tags || '').split(',');
-      var match = Array.from(activeTags).some(function(t) { return cardTags.indexOf(t) !== -1; });
-      if (match) matches.push(card);
-    });
-
-    var tagNames = Array.from(activeTags).join(', ');
-    filterCount.textContent = matches.length + ' pick' + (matches.length !== 1 ? 's' : '') + ' in ' + tagNames;
-
-    filterResults.innerHTML = '';
-    if (matches.length === 0) {
-      filterResults.innerHTML = '<div class="filter-empty">No picks match these filters.</div>';
-      return;
-    }
-    var grid = document.createElement('div');
-    grid.className = 'filter-grid';
-    matches.forEach(function(card) {
-      var clone = card.cloneNode(true);
-      clone.style.display = '';
-      if (skipAnimation) {
-        clone.classList.add('filter-card-enter', 'filter-card-visible');
-      } else {
-        clone.classList.add('filter-card-enter');
-      }
-      grid.appendChild(clone);
-    });
-    filterResults.appendChild(grid);
-
-    if (!skipAnimation) {
-      requestAnimationFrame(function() {
-        grid.querySelectorAll('.filter-card-enter').forEach(function(c, i) {
-          setTimeout(function() { c.classList.add('filter-card-visible'); }, i * 40);
-        });
-      });
-    }
-  }
-
-  function applyFilters() {
-    if (activeTags.size > 0) {
-      enterFilterMode();
-      buildFilterCards(false);
-    } else {
-      exitFilterMode();
-      cards.forEach(function(card) { card.style.display = ''; });
-      sections.forEach(function(section) { section.style.display = ''; });
-    }
-  }
-
-  tabs.forEach(function(tab) {
-    tab.addEventListener('click', function() {
-      var tag = this.dataset.tag;
-
-      if (!tag) {
-        activeTags.clear();
-        tabs.forEach(function(t) { t.classList.remove('active'); });
-        trendingTab.classList.add('active');
-        applyFilters();
-        return;
-      }
-
-      if (activeTags.has(tag)) {
-        activeTags.delete(tag);
-        this.classList.remove('active');
-      } else {
-        activeTags.add(tag);
-        this.classList.add('active');
-        trendingTab.classList.remove('active');
-      }
-
-      if (activeTags.size === 0) {
-        trendingTab.classList.add('active');
-      }
-
-      applyFilters();
-    });
-  });
-
-  filterClear.addEventListener('click', function() {
-    activeTags.clear();
-    tabs.forEach(function(t) { t.classList.remove('active'); });
-    trendingTab.classList.add('active');
-    applyFilters();
-  });
-
-  // Sticky tabs on scroll (normal mode)
-  function updateSticky() {
-    if (inFilterMode) return;
-    var rect = tabsWrapper.getBoundingClientRect();
-    if (rect.top <= 0) {
-      if (!tabsEl.classList.contains('sticky')) {
-        tabsWrapper.style.minHeight = tabsEl.offsetHeight + 'px';
-        tabsEl.classList.add('sticky');
-      }
-    } else {
-      tabsEl.classList.remove('sticky');
-      tabsWrapper.style.minHeight = '';
-    }
-  }
-  window.addEventListener('scroll', updateSticky, { passive: true });
-
-  // Restore filter state on page load (back button)
-  restoreState();
-})();
-</script>

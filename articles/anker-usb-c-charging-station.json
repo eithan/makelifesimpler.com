@@ -1,9 +1,9 @@
 {
   "id": "anker-usb-c-charging-station",
   "title": "Anker USB-C Charging Station",
-  "emoji": "\u26a1",
+  "emoji": "⚡",
   "summary": "A compact charging station that powers all your devices from one spot. Replace the tangle of chargers on your desk with a single clean hub.",
-  "content": "<p>The Anker USB-C Charging Station is the antidote to cable chaos. It has multiple USB-C and USB-A ports with enough power to fast-charge your laptop, phone, tablet, and earbuds simultaneously. One device, one cable to the wall, everything charged.</p><p>The GaN (Gallium Nitride) technology keeps it compact despite the high wattage output. It's smaller than most laptop chargers but powers your entire desk. Smart power distribution automatically allocates wattage based on what's connected \u2014 plug in a laptop and it gets priority, add a phone and it shares intelligently.</p><p>Build quality is excellent with surge protection, temperature control, and overvoltage protection built in. It works with everything that charges via USB \u2014 Apple, Samsung, laptops, Switch, Steam Deck, you name it. The best part? It eliminates 4-5 separate chargers and their wall warts from your setup.</p>",
+  "content": "<p>The Anker USB-C Charging Station is the antidote to cable chaos. It has multiple USB-C and USB-A ports with enough power to fast-charge your laptop, phone, tablet, and earbuds simultaneously. One device, one cable to the wall, everything charged.</p><p>The GaN (Gallium Nitride) technology keeps it compact despite the high wattage output. It's smaller than most laptop chargers but powers your entire desk. Smart power distribution automatically allocates wattage based on what's connected — plug in a laptop and it gets priority, add a phone and it shares intelligently.</p><p>Build quality is excellent with surge protection, temperature control, and overvoltage protection built in. It works with everything that charges via USB — Apple, Samsung, laptops, Switch, Steam Deck, you name it. The best part? It eliminates 4-5 separate chargers and their wall warts from your setup.</p>",
   "tags": [
     "Products",
     "Productivity"
@@ -28,11 +28,19 @@
       "title": "Quick Overview",
       "type": "summary",
       "steps": [
-        "Pick the right wattage model for your devices (67W\u2013150W)",
+        "Pick the right wattage model for your devices (67W–150W)",
         "Place on your desk and plug into the wall",
-        "Connect all your devices \u2014 it handles power distribution automatically",
+        "Connect all your devices — it handles power distribution automatically",
         "Retire your individual chargers and enjoy the clean setup"
       ]
     }
-  ]
+  ],
+  "hub": "digital-productivity",
+  "simplicityScore": {
+    "timeSaved": 5,
+    "setupEffort": 1,
+    "score": 6.2
+  },
+  "frictionNote": "Power splits when multiple devices connected. Gets warm under heavy load. Not cheap for a charger.",
+  "dropId": null
 }

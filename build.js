@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * build.js — Static site generator for makelifesimpler.com
- * No dependencies, pure Node.js (fs + path only).
+ * build.js — Static site generator for makelifesimpler v2
+ * Hub-and-spoke architecture with weekly drops.
  */
 const fs = require('fs');
 const path = require('path');
@@ -24,9 +24,7 @@ if (fs.existsSync(statePath)) {
   state = JSON.parse(fs.readFileSync(statePath, 'utf8'));
 }
 articles.forEach(a => {
-  if (!(a.id in state)) {
-    state[a.id] = Math.floor(Math.random() * 800) + 200; // 200-999
-  }
+  if (!(a.id in state)) state[a.id] = Math.floor(Math.random() * 800) + 200;
 });
 fs.writeFileSync(statePath, JSON.stringify(state, null, 2));
 
@@ -36,57 +34,33 @@ const headerTmpl = tmpl('header.html');
 const footerTmpl = tmpl('footer.html');
 const homeTmpl = tmpl('home.html');
 const articleTmpl = tmpl('article.html');
+const hubTmpl = tmpl('hub.html');
+const archiveTmpl = tmpl('archive.html');
 
-// ─── Compute stats ──────────────────────────────────────────
-const allTags = articles.flatMap(a => a.tags);
-const uniqueTags = [...new Set(allTags)];
+// ─── Helpers ─────────────────────────────────────────────────
 const totalClicks = Object.values(state).reduce((s, v) => s + v, 0);
 const clicksDisplay = totalClicks >= 1000 ? Math.round(totalClicks / 1000) + 'K+' : totalClicks.toString();
 
-// ─── Determine featured article ─────────────────────────────
-let featured;
-if (site.featuredOverride) {
-  featured = articles.find(a => a.id === site.featuredOverride);
-}
-if (!featured) {
-  featured = articles.reduce((best, a) => (state[a.id] > state[best.id] ? a : best), articles[0]);
+function scoreColor(score) {
+  if (score >= 7) return 'score-green';
+  if (score >= 4) return 'score-yellow';
+  return 'score-red';
 }
 
-// ─── Build tabs (top 10 tags by frequency) ──────────────────
-const tagCounts = {};
-allTags.forEach(t => { tagCounts[t] = (tagCounts[t] || 0) + 1; });
-const topTags = Object.entries(tagCounts)
-  .sort((a, b) => b[1] - a[1])
-  .slice(0, 10)
-  .map(e => e[0]);
-
-const tabsHtml = [
-  '<div class="tab active" data-tag=""><span class="emoji">🔥</span>Trending</div>',
-  ...topTags.map(t => `<div class="tab" data-tag="${t}"><span class="emoji">📌</span>${t}</div>`)
-].join('\n  ');
-
-// ─── Build featured card ────────────────────────────────────
-const featuredHtml = `
-  <a href="article.html?id=${featured.id}" class="featured">
-    <div class="featured-text">
-      <div class="featured-badge">⭐ Pick of the Week</div>
-      <h3>${featured.title}</h3>
-      <p>${featured.summary}</p>
-      <span class="cta-btn">See Why It's #1 →</span>
-    </div>
-    <div class="featured-img">${featured.emoji}</div>
-  </a>`;
-
-// ─── Build section cards ────────────────────────────────────
-function buildCard(article) {
-  const tag = article.tags[0] || '';
+function buildCard(article, basePath) {
+  basePath = basePath || '';
   const searchText = [article.title, article.summary, ...article.tags].join(' ').toLowerCase();
-  const tagsData = article.tags.join(',');
+  const tagsData = [article.hub, ...article.tags].join(',');
+  const score = article.simplicityScore ? article.simplicityScore.score : null;
+  const scoreBadge = score !== null
+    ? `<span class="simplicity-badge ${scoreColor(score)}" title="Simplicity Score">${score}</span>`
+    : '';
+  const hubClass = article.hub || article.section || '';
   return `
-    <a href="article.html?id=${article.id}" class="item-card" data-search="${searchText}" data-tags="${tagsData}">
-      <div class="item-icon ${article.section}">${article.emoji}</div>
+    <a href="${basePath}article.html?id=${article.id}" class="item-card" data-search="${searchText}" data-tags="${tagsData}">
+      <div class="item-icon ${hubClass}">${article.emoji}</div>
       <div class="item-info">
-        <h4>${article.title}</h4>
+        <h4>${article.title} ${scoreBadge}</h4>
         <p>${article.summary}</p>
         <div class="item-meta">
           ${article.tags.map(t => `<span class="tag">${t}</span>`).join('')}
@@ -96,47 +70,154 @@ function buildCard(article) {
     </a>`;
 }
 
-// Sort articles by clicks (descending) within each section
-let sectionsHtml = '';
-for (const section of site.sections) {
-  const sectionArticles = articles
-    .filter(a => a.section === section.id)
-    .sort((a, b) => state[b.id] - state[a.id]);
+// ─── Featured item ───────────────────────────────────────────
+const featuredArticle = site.featuredOverride
+  ? articles.find(a => a.id === site.featuredOverride)
+  : articles.find(a => a.featured);
 
-  if (sectionArticles.length === 0) continue;
+let featuredHtml = '';
+if (featuredArticle) {
+  featuredHtml = `
+  <a href="article.html?id=${featuredArticle.id}" class="featured">
+    <div class="featured-text">
+      <div class="featured-badge">⭐ Pick of the Week</div>
+      <h3>${featuredArticle.title}</h3>
+      <p>${featuredArticle.summary}</p>
+      <span class="cta-btn">See Why It's #1 →</span>
+    </div>
+    <div class="featured-img">${featuredArticle.emoji}</div>
+  </a>`;
+}
 
-  sectionsHtml += `
-  <div class="section-block">
+// ─── Drop sections ───────────────────────────────────────────
+function buildDropSection(drop, label) {
+  if (!drop) return '';
+  const dropArticles = drop.articleIds
+    .map(id => articles.find(a => a.id === id))
+    .filter(Boolean);
+  if (dropArticles.length === 0) return '';
+  return `
+  <div class="section-block drop-section">
     <div class="section-header">
-      <h2><span class="emoji">${section.emoji}</span>${section.title}</h2>
+      <h2><span class="emoji">🆕</span>${label}</h2>
+      <span class="drop-date">${drop.date}</span>
     </div>
     <div class="items-grid">
-      ${sectionArticles.map(buildCard).join('')}
+      ${dropArticles.map(a => buildCard(a)).join('')}
     </div>
   </div>`;
 }
 
-// ─── Assemble pages ─────────────────────────────────────────
-// Home page
+const currentDrop = site.drops.find(d => d.id === site.currentDrop);
+const previousDrop = site.drops.find(d => d.id === site.previousDrop);
+
+const thisWeekHtml = buildDropSection(currentDrop, 'This Week');
+const lastWeekHtml = buildDropSection(previousDrop, 'Last Week');
+
+// ─── Hub cards for homepage grid (sorted by most recent article) ─
+// Determine recency: find the latest drop index each hub appears in
+function hubRecency(hubId) {
+  // Check drops in order (newest first by date)
+  const sortedDrops = site.drops.slice().sort((a, b) => b.date.localeCompare(a.date));
+  for (let i = 0; i < sortedDrops.length; i++) {
+    const drop = sortedDrops[i];
+    const hasArticle = drop.articleIds.some(id => {
+      const a = articles.find(art => art.id === id);
+      return a && a.hub === hubId;
+    });
+    if (hasArticle) return i; // lower = more recent
+  }
+  return sortedDrops.length; // no articles in any drop = least recent
+}
+
+const sortedHubs = site.hubs.slice().sort((a, b) => hubRecency(a.id) - hubRecency(b.id));
+
+function hubCardCount(hubId) {
+  return articles.filter(a => a.hub === hubId).length;
+}
+
+const hubCardsHtml = sortedHubs.map(h => {
+  const count = hubCardCount(h.id);
+  return `
+    <a href="hub/${h.id}.html" class="hub-card">
+      <span class="hub-card-emoji">${h.emoji}</span>
+      <span class="hub-card-name">${h.title}</span>
+      <span class="hub-card-count">${count} pick${count !== 1 ? 's' : ''}</span>
+    </a>`;
+}).join('');
+
+// ─── Assemble home page ─────────────────────────────────────
 let homeContent = homeTmpl
   .replace(/\{\{TOTAL_ARTICLES\}\}/g, articles.length.toString())
-  .replace('{{TOTAL_TAGS}}', uniqueTags.length.toString())
+  .replace('{{TOTAL_HUBS}}', site.hubs.length.toString())
   .replace('{{TOTAL_CLICKS}}', clicksDisplay)
-  .replace('{{TABS}}', tabsHtml)
   .replace('{{FEATURED}}', featuredHtml)
-  .replace('{{SECTIONS}}', sectionsHtml);
+  .replace('{{THIS_WEEK}}', thisWeekHtml)
+  .replace('{{HUB_CARDS}}', hubCardsHtml)
+  .replace('{{LAST_WEEK}}', lastWeekHtml);
 
 const homeHtml = headerTmpl.replace('{{TITLE}}', 'Make Life Simpler — Curated Tools & Products') + homeContent + footerTmpl;
 
-// Article page
+// ─── Article page ───────────────────────────────────────────
 const articleHtml = headerTmpl.replace('{{TITLE}}', 'Make Life Simpler') + articleTmpl + footerTmpl;
+
+// ─── Hub pages ──────────────────────────────────────────────
+fs.mkdirSync(path.join(DIST, 'hub'), { recursive: true });
+
+for (const hub of site.hubs) {
+  const hubArticles = articles
+    .filter(a => a.hub === hub.id)
+    .sort((a, b) => (b.simplicityScore?.score || 0) - (a.simplicityScore?.score || 0));
+
+  let hubContent = hubTmpl
+    .replace('{{HUB_EMOJI}}', hub.emoji)
+    .replace('{{HUB_TITLE}}', hub.title)
+    .replace('{{HUB_DESCRIPTION}}', hub.description)
+    .replace('{{HUB_COUNT}}', hubArticles.length.toString())
+    .replace('{{HUB_ARTICLES}}', hubArticles.map(a => buildCard(a, '../')).join(''));
+
+  const hubHeader = headerTmpl
+    .replace('{{TITLE}}', hub.title + ' — Make Life Simpler')
+    .replace('href="favicon.svg"', 'href="../favicon.svg"')
+    .replace('href="assets/style.css"', 'href="../assets/style.css"');
+  const hubFooter = footerTmpl;
+
+  hubContent = hubContent.replace('href="index.html"', 'href="../index.html"');
+
+  fs.writeFileSync(path.join(DIST, 'hub', hub.id + '.html'), hubHeader + hubContent + hubFooter);
+}
+
+// ─── Archive page ───────────────────────────────────────────
+const dropsHtml = site.drops
+  .slice()
+  .sort((a, b) => b.date.localeCompare(a.date))
+  .map(drop => {
+    const dropArticles = drop.articleIds
+      .map(id => articles.find(a => a.id === id))
+      .filter(Boolean);
+    return `
+    <div class="drop-block">
+      <div class="drop-block-header">
+        <h2>${drop.title}</h2>
+        <span class="drop-date">${drop.date}</span>
+      </div>
+      <div class="items-grid">
+        ${dropArticles.map(a => buildCard(a)).join('')}
+      </div>
+    </div>`;
+  }).join('');
+
+let archiveContent = archiveTmpl.replace('{{DROPS}}', dropsHtml);
+const archiveHtml = headerTmpl.replace('{{TITLE}}', 'Drop Archive — Make Life Simpler') + archiveContent + footerTmpl;
 
 // ─── Write dist ─────────────────────────────────────────────
 fs.mkdirSync(path.join(DIST, 'articles'), { recursive: true });
 fs.mkdirSync(path.join(DIST, 'assets'), { recursive: true });
+fs.mkdirSync(path.join(DIST, 'hub'), { recursive: true });
 
 fs.writeFileSync(path.join(DIST, 'index.html'), homeHtml);
 fs.writeFileSync(path.join(DIST, 'article.html'), articleHtml);
+fs.writeFileSync(path.join(DIST, 'archive.html'), archiveHtml);
 
 // Copy article JSON files to dist
 articles.forEach(a => {
@@ -146,10 +227,12 @@ articles.forEach(a => {
   );
 });
 
-// Copy CSS (already exists but rebuild from source to be safe)
-const cssPath = path.join(ROOT, 'dist', 'assets', 'style.css');
-// CSS is maintained as a static file; no extraction needed
+// Copy style.css
+fs.copyFileSync(
+  path.join(ROOT, 'style.css'),
+  path.join(DIST, 'assets', 'style.css')
+);
 
 console.log(`✅ Built ${articles.length} articles → dist/`);
-console.log(`   Featured: ${featured.title}`);
-console.log(`   Tags: ${uniqueTags.length} | Clicks: ${clicksDisplay}`);
+console.log(`   Hubs: ${site.hubs.length} | Drops: ${site.drops.length}`);
+console.log(`   Pages: index, article, archive, ${site.hubs.length} hub pages`);

@@ -1,0 +1,14 @@
+{
+  "id": "oura-ring-4",
+  "title": "Oura Ring 4 — Health Tracking You'll Actually Wear",
+  "emoji": "💍",
+  "summary": "A titanium ring that tracks sleep, heart rate, temperature, and activity — without looking like a gadget.",
+  "content": "<p>The Oura Ring 4 solves the biggest problem with wearable health trackers: nobody wants to wear a chunky smartwatch to bed. The ring is lightweight titanium, looks like jewelry, and lasts 7+ days on a single charge. You forget it's a health tracker, which is exactly why you actually wear it.</p><p>Sleep tracking is where Oura excels. It measures sleep stages, heart rate variability, blood oxygen, and skin temperature with clinical-grade accuracy. The morning Readiness Score tells you at a glance whether to push hard or take it easy — it factors in sleep quality, recovery, and recent activity trends.</p><p>The new Gen 4 sensors improved daytime heart rate tracking significantly. Activity tracking counts steps and calories, but the real value is the long-term trends: see how your sleep responds to exercise, alcohol, late meals, or stress over weeks and months. The cycle tracking feature uses temperature shifts for accurate period predictions.</p>",
+  "tags": ["Wellness", "Wearable"],
+  "hub": "wellness-tech",
+  "section": "products",
+  "featured": false,
+  "simplicityScore": { "score": 8, "setup": "Easy", "learning": "Low", "maintenance": "Low" },
+  "frictionNote": "$349 + $6/month subscription required for full insights. Sizing kit recommended (free). No screen means you need your phone for details.",
+  "guides": []
+}

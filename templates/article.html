@@ -19,10 +19,39 @@
     return m ? m[1] : '';
   }
 
+  function scoreColorClass(score) {
+    if (score >= 7) return 'score-green';
+    if (score >= 4) return 'score-yellow';
+    return 'score-red';
+  }
+
   fetch('articles/' + id + '.json')
     .then(r => { if (!r.ok) throw new Error(); return r.json(); })
     .then(article => {
       const tags = article.tags.map(t => '<span class="tag">' + t + '</span>').join('');
+
+      // Simplicity score section
+      let scoreHtml = '';
+      if (article.simplicityScore) {
+        const s = article.simplicityScore;
+        scoreHtml = '<div class="simplicity-section">' +
+          '<div class="simplicity-header">Simplicity Score</div>' +
+          '<div class="simplicity-details">' +
+            '<div class="simplicity-big-score ' + scoreColorClass(s.score) + '">' + s.score + '</div>' +
+            '<div class="simplicity-breakdown">' +
+              '<div class="simplicity-stat"><span class="simplicity-label">Time Saved</span><span class="simplicity-value">' + s.timeSaved + '/10</span></div>' +
+              '<div class="simplicity-stat"><span class="simplicity-label">Setup Effort</span><span class="simplicity-value">' + s.setupEffort + '/10</span></div>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+      }
+
+      // Friction note
+      let frictionHtml = '';
+      if (article.frictionNote) {
+        frictionHtml = '<div class="friction-note"><div class="friction-title">⚠️ What sucks about it</div><p>' + article.frictionNote + '</p></div>';
+      }
+
       let guidesHtml = '';
       if (article.guides && article.guides.length) {
         guidesHtml = '<div class="guides-section"><h2 class="guides-title">🚀 Help Me Make Life Simpler!</h2><div class="guides-list">' +
@@ -56,7 +85,9 @@
           '<h1>' + article.title + '</h1>' +
           '<div class="article-tags">' + tags + '</div>' +
         '</div>' +
+        scoreHtml +
         '<div class="article-body">' + article.content + '</div>' +
+        frictionHtml +
         guidesHtml;
       document.title = article.title + ' — Make Life Simpler';
     })

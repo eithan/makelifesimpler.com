@@ -1,9 +1,9 @@
 {
   "id": "eight-sleep-pod-cover",
   "title": "Eight Sleep Pod Cover",
-  "emoji": "\ud83d\udecf\ufe0f",
+  "emoji": "🛏️",
   "summary": "A smart mattress cover that heats and cools each side of the bed independently. Uses AI to optimize your sleep temperature throughout the night.",
-  "content": "<p>The Eight Sleep Pod Cover turns any mattress into a smart bed. It circulates water through a thin layer to heat or cool each side independently \u2014 from 55\u00b0F to 110\u00b0F. If you've ever fought over the thermostat at night, this solves it permanently.</p><p>The AI-powered Autopilot feature learns your sleep patterns and automatically adjusts temperature throughout the night. It cools you down for deep sleep, warms you up before your alarm, and adapts to seasonal changes. The companion app shows detailed sleep metrics including heart rate, HRV, respiratory rate, and sleep stages.</p><p>It's not cheap, but the impact on sleep quality is dramatic. Better sleep improves everything \u2014 energy, focus, mood, recovery. If you're serious about optimizing your health, temperature-controlled sleep is the highest-ROI investment you can make.</p>",
+  "content": "<p>The Eight Sleep Pod Cover turns any mattress into a smart bed. It circulates water through a thin layer to heat or cool each side independently — from 55°F to 110°F. If you've ever fought over the thermostat at night, this solves it permanently.</p><p>The AI-powered Autopilot feature learns your sleep patterns and automatically adjusts temperature throughout the night. It cools you down for deep sleep, warms you up before your alarm, and adapts to seasonal changes. The companion app shows detailed sleep metrics including heart rate, HRV, respiratory rate, and sleep stages.</p><p>It's not cheap, but the impact on sleep quality is dramatic. Better sleep improves everything — energy, focus, mood, recovery. If you're serious about optimizing your health, temperature-controlled sleep is the highest-ROI investment you can make.</p>",
   "tags": [
     "Health",
     "Products"
@@ -11,7 +11,7 @@
   "section": "products",
   "guides": [
     {
-      "title": "Eight Sleep Pod 4 \u2014 6 Months Later",
+      "title": "Eight Sleep Pod 4 — 6 Months Later",
       "type": "video",
       "source": "6 Months Later",
       "url": "https://www.youtube.com/watch?v=A3ccrcNBjK0",
@@ -35,5 +35,13 @@
         "Check sleep reports each morning in the app"
       ]
     }
-  ]
+  ],
+  "hub": "wellness-tech",
+  "simplicityScore": {
+    "timeSaved": 7,
+    "setupEffort": 2,
+    "score": 7.3
+  },
+  "frictionNote": "Very expensive ($2,000+). Requires monthly subscription for AI features. Pump makes a faint hum.",
+  "dropId": null
 }

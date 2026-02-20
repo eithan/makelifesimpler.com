@@ -4,7 +4,10 @@
   "emoji": "🤖",
   "summary": "An open-source AI agent that runs on your own server. It reads your messages, manages your smart home, monitors your inbox, and handles tasks while you sleep.",
   "content": "<p>OpenClaw is what happens when you give an AI agent its own server and let it run continuously. It connects to your messaging platforms, email, calendar, smart home, and more — then handles tasks proactively, not just when you ask. Think of it as a personal assistant that never sleeps.</p><p>Unlike chatbot-style AI tools, OpenClaw maintains persistent memory across sessions. It learns your preferences, remembers your projects, and builds context over time. Ask it to monitor your inbox for important emails, manage your Home Assistant automations, or keep track of package deliveries — it just does it, in the background.</p><p>The self-hosted approach means your data stays on your hardware. No cloud dependency, no subscription fees for the core platform, and full control over which AI models power it. The community is growing fast, with plugins for everything from Discord bots to automated code review. It's the closest thing to a real personal assistant that exists today.</p>",
-  "tags": ["AI Tools", "Automation"],
+  "tags": [
+    "AI Tools",
+    "Automation"
+  ],
   "section": "tech",
   "featured": true,
   "guides": [
@@ -33,5 +36,13 @@
         "Configure your AI model and start chatting"
       ]
     }
-  ]
+  ],
+  "hub": "ai-tools",
+  "simplicityScore": {
+    "timeSaved": 9,
+    "setupEffort": 5,
+    "score": 7.8
+  },
+  "frictionNote": "Requires a dedicated server and some Linux knowledge to self-host. Initial setup takes a few hours.",
+  "dropId": "2026-W08"
 }

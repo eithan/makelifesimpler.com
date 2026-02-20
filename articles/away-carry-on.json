@@ -1,0 +1,14 @@
+{
+  "id": "away-carry-on",
+  "title": "Away Carry-On — The Only Bag You Need for Short Trips",
+  "emoji": "🧳",
+  "summary": "A hardshell carry-on with a built-in compression system, ejectable battery, and a lifetime warranty.",
+  "content": "<p>Away's Carry-On hits the sweet spot between durability, organization, and price. The polycarbonate shell flexes without cracking, and the interior compression system lets you pack more without sitting on your suitcase. Two compartments — one for folded clothes, one for everything else — keep things organized without packing cubes.</p><p>The ejectable battery (optional) charges your phone via USB without opening the bag, and pops out for TSA compliance. The 360° spinner wheels are genuinely silent on airport floors, and the telescoping handle locks at multiple heights so it's comfortable regardless of your height.</p><p>What really sells it is the lifetime warranty. Wheels break, zippers jam — Away fixes or replaces it for life. For a $275 bag that replaces a $50 one every two years, the math works out fast. It fits every major airline's carry-on size requirements.</p>",
+  "tags": ["Travel", "Gear"],
+  "hub": "travel-packing",
+  "section": "products",
+  "featured": false,
+  "simplicityScore": { "score": 9, "setup": "None", "learning": "None", "maintenance": "None" },
+  "frictionNote": "$275 is steep for a carry-on. The battery model adds weight. Limited color options compared to cheaper alternatives.",
+  "guides": []
+}

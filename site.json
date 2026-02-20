@@ -1,7 +1,30 @@
 {
-  "sections": [
-    { "id": "tech", "title": "Tech That Changes Everything", "emoji": "⚡" },
-    { "id": "products", "title": "Products Worth Every Penny", "emoji": "🛒" }
+  "hubs": [
+    { "id": "ai-tools", "title": "AI Tools", "emoji": "🤖", "description": "AI-powered tools that think so you don't have to." },
+    { "id": "smart-home", "title": "Smart Home", "emoji": "🏠", "description": "Automate your living space into something that runs itself." },
+    { "id": "digital-productivity", "title": "Digital Productivity", "emoji": "⚡", "description": "Tools and workflows that eliminate busywork." },
+    { "id": "financial-automation", "title": "Financial Automation", "emoji": "💰", "description": "Automate your money so it works while you sleep." },
+    { "id": "wellness-tech", "title": "Wellness & Health Tech", "emoji": "🧘", "description": "Technology that helps you sleep, move, and recover better." },
+    { "id": "kitchen-tech", "title": "Kitchen Tech", "emoji": "🍳", "description": "Appliances that make cooking effortless." },
+    { "id": "networking", "title": "Networking & Security", "emoji": "🔒", "description": "Secure, simple networking that just works." },
+    { "id": "travel-packing", "title": "Travel & Packing", "emoji": "🧳", "description": "Gear and tricks that make travel painless." },
+    { "id": "cleaning-tech", "title": "Cleaning Tech", "emoji": "🧹", "description": "Robots and gadgets that clean so you don't have to." }
   ],
+  "drops": [
+    {
+      "id": "2026-W08",
+      "date": "2026-02-22",
+      "title": "This Week",
+      "articleIds": ["openclaw", "perplexity-ai", "home-assistant-matter", "roborock-s8-maxv-ultra", "eight-sleep-pod-cover", "notion-calendar", "github-copilot", "ecobee-smart-thermostat"]
+    },
+    {
+      "id": "2026-W07",
+      "date": "2026-02-15",
+      "title": "Last Week",
+      "articleIds": ["tailscale", "anker-usb-c-charging-station", "instant-pot-pro-plus", "shortcuts-nfc-tags", "irobot-roomba-j9", "wise-transfers", "away-carry-on", "oura-ring-4"]
+    }
+  ],
+  "currentDrop": "2026-W08",
+  "previousDrop": "2026-W07",
   "featuredOverride": null
 }
