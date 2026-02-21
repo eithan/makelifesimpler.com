@@ -19,5 +19,31 @@
     "easeOfSetup": 9
   },
   "frictionNote": "Expensive at ~$800. The Clean Base is large and needs a wall outlet with clearance. Maps take 2-3 runs to fully learn your space.",
-  "guides": []
+  "guides": [
+    {
+      "title": "iRobot Roomba j9+ Setup & Review",
+      "type": "video",
+      "source": "Vacuum Wars",
+      "url": "https://www.youtube.com/watch?v=Kx2yGq0rYhk",
+      "summary": "Full unboxing, setup walkthrough, and cleaning performance tests on multiple floor types."
+    },
+    {
+      "title": "iRobot Roomba j9+ Support",
+      "type": "article",
+      "source": "iRobot",
+      "url": "https://www.irobot.com/support/roomba-j9-plus",
+      "summary": "Official support page with setup instructions, smart mapping guide, and troubleshooting."
+    },
+    {
+      "title": "Quick Start",
+      "type": "summary",
+      "steps": [
+        "Place the Clean Base in a central location with clearance on both sides",
+        "Charge the Roomba fully on the dock (takes ~3 hours)",
+        "Download the iRobot Home app and create an account",
+        "Follow the app to connect Roomba to your WiFi",
+        "Run the first mapping clean — the robot learns your floor plan automatically"
+      ]
+    }
+  ]
 }

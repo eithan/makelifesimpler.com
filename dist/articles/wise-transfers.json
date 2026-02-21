@@ -19,5 +19,31 @@
     "easeOfSetup": 9
   },
   "frictionNote": "Identity verification required (standard KYC). Some countries have limited features. Large transfers may take 1-2 business days.",
-  "guides": []
+  "guides": [
+    {
+      "title": "How to Use Wise (TransferWise) — Full Tutorial",
+      "type": "video",
+      "source": "Saunders Says",
+      "url": "https://www.youtube.com/watch?v=rjg5ELpWbhc",
+      "summary": "Step-by-step walkthrough of setting up a Wise account, making your first transfer, and using the multi-currency card."
+    },
+    {
+      "title": "Wise Help Centre — Getting Started",
+      "type": "article",
+      "source": "Wise",
+      "url": "https://wise.com/help/articles/2932105/how-do-i-send-money",
+      "summary": "Official guide to sending money internationally, including fees breakdown and delivery times."
+    },
+    {
+      "title": "Quick Start",
+      "type": "summary",
+      "steps": [
+        "Sign up at wise.com with your email",
+        "Verify your identity with a photo ID and selfie",
+        "Enter the amount and recipient's bank details",
+        "Choose how to pay (bank transfer is cheapest)",
+        "Track your transfer in real-time from the app"
+      ]
+    }
+  ]
 }

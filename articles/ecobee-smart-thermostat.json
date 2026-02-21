@@ -19,5 +19,31 @@
     "easeOfSetup": 6
   },
   "frictionNote": "Installation requires basic wiring knowledge or a professional install (~$75). Needs a C-wire or the included power extender kit.",
-  "guides": []
+  "guides": [
+    {
+      "title": "Ecobee Setup & Installation Guide",
+      "type": "video",
+      "source": "Tech With Brett",
+      "url": "https://www.youtube.com/watch?v=qbkmfNhmUjM",
+      "summary": "Complete walkthrough of installing and configuring an Ecobee smart thermostat from unboxing to app setup."
+    },
+    {
+      "title": "Ecobee Support & Setup Guide",
+      "type": "article",
+      "source": "Ecobee",
+      "url": "https://support.ecobee.com/s/articles/Getting-started-with-your-ecobee-thermostat",
+      "summary": "Official step-by-step installation guide including wiring diagrams and compatibility checker."
+    },
+    {
+      "title": "Quick Start",
+      "type": "summary",
+      "steps": [
+        "Check wiring compatibility using the Ecobee online tool",
+        "Turn off HVAC power at the breaker",
+        "Install the backplate and connect wires",
+        "Mount the thermostat and power on",
+        "Download the Ecobee app and connect to WiFi"
+      ]
+    }
+  ]
 }

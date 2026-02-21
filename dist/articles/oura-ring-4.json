@@ -19,5 +19,31 @@
     "easeOfSetup": 8
   },
   "frictionNote": "$349 + $6/month subscription required for full insights. Sizing kit recommended (free). No screen means you need your phone for details.",
-  "guides": []
+  "guides": [
+    {
+      "title": "Oura Ring 4 — Full Review After 30 Days",
+      "type": "video",
+      "source": "Shervin Shares",
+      "url": "https://www.youtube.com/watch?v=NOvYjpBXAWg",
+      "summary": "Comprehensive review covering sleep tracking accuracy, new sensors, battery life, and app experience."
+    },
+    {
+      "title": "Getting Started with Oura Ring",
+      "type": "article",
+      "source": "Oura",
+      "url": "https://support.ouraring.com/hc/en-us/categories/360001593554-Getting-Started",
+      "summary": "Official setup guide covering sizing, charging, app pairing, and understanding your first scores."
+    },
+    {
+      "title": "Quick Start",
+      "type": "summary",
+      "steps": [
+        "Order the free sizing kit and wear test rings for 24 hours",
+        "Once your ring arrives, charge it fully on the dock (~60 min)",
+        "Download the Oura app and create an account",
+        "Hold the ring near your phone to pair via Bluetooth",
+        "Wear it to sleep for 7 nights to calibrate your baseline scores"
+      ]
+    }
+  ]
 }

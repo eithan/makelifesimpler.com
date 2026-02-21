@@ -19,5 +19,31 @@
     "easeOfSetup": 9
   },
   "frictionNote": "Requires a Notion account to unlock full integration. Standalone calendar features are still solid without one.",
-  "guides": []
+  "guides": [
+    {
+      "title": "Notion Calendar — Complete Guide",
+      "type": "video",
+      "source": "Thomas Frank",
+      "url": "https://www.youtube.com/watch?v=oTahLEX3NXo",
+      "summary": "Deep dive into Notion Calendar features, Google Calendar integration, and how to link it with your Notion workspace."
+    },
+    {
+      "title": "Getting Started with Notion Calendar",
+      "type": "article",
+      "source": "Notion",
+      "url": "https://www.notion.so/help/notion-calendar",
+      "summary": "Official help page covering setup, Google Calendar sync, database connections, and scheduling."
+    },
+    {
+      "title": "Quick Start",
+      "type": "summary",
+      "steps": [
+        "Download Notion Calendar from calendar.notion.so or the app store",
+        "Sign in with your Notion account",
+        "Connect your Google Calendar(s) when prompted",
+        "Link Notion databases to see tasks alongside events",
+        "Use Cmd+K to quickly create events from anywhere"
+      ]
+    }
+  ]
 }

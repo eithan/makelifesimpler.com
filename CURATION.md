@@ -48,7 +48,7 @@ Each article is a JSON file in `articles/`. Here's the full schema:
 | `featured` | No | Set `true` for Pick of the Week. Only one article should be featured. |
 | `simplicityScore` | Yes | See scoring guide below. |
 | `frictionNote` | Yes | Honest downside. Every product has one. |
-| `guides` | No | Array of guides (video/article/summary). Can be empty `[]`. |
+| `guides` | **Yes** | Array of 3 guides (video + article + summary). See Guides section below. **Never leave empty.** |
 
 ---
 
@@ -236,9 +236,15 @@ Article filenames match their `id`: `kebab-case-name.json`
 
 ---
 
-## Guides (Optional)
+## Guides (Required)
 
-If a product has good setup resources, include them:
+Every article **must** have exactly 3 guides. This powers the "Help Me Make Life Simpler!" section on the article page. **Never leave guides empty.**
+
+The three guide types:
+
+1. **Video guide** — A real YouTube setup/review video. Search for one; it must be a working URL.
+2. **Article guide** — Official docs or a well-known review/tutorial. Link to a real page.
+3. **Summary guide** — 3-5 quick setup steps written by us.
 
 ```json
 "guides": [
@@ -264,4 +270,4 @@ If a product has good setup resources, include them:
 ]
 ```
 
-Skip guides if none exist or they're low quality. An empty array `[]` is fine.
+**Quality bar:** Only link to real, working URLs. If you can't find a good video or article, search harder — every product worth featuring has resources out there.

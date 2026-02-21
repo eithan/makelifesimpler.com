@@ -19,5 +19,31 @@
     "easeOfSetup": 10
   },
   "frictionNote": "$275 is steep for a carry-on. The battery model adds weight. Limited color options compared to cheaper alternatives.",
-  "guides": []
+  "guides": [
+    {
+      "title": "Away Carry-On Review — 2 Years Later",
+      "type": "video",
+      "source": "Pack Hacker",
+      "url": "https://www.youtube.com/watch?v=2xgXqpCR_qM",
+      "summary": "Honest long-term review covering durability, packing capacity, and the built-in battery after years of travel."
+    },
+    {
+      "title": "Away Carry-On Product Page",
+      "type": "article",
+      "source": "Away",
+      "url": "https://www.awaytravel.com/suitcases/carry-on",
+      "summary": "Full specs, size guide, color options, and details on the ejectable battery system."
+    },
+    {
+      "title": "Quick Start",
+      "type": "summary",
+      "steps": [
+        "Unbox and remove protective wrapping",
+        "Charge the ejectable battery via USB-C",
+        "Use the compression pad to organize clothes",
+        "Slide the battery into the side compartment",
+        "TSA-approved lock defaults to 0-0-0 — set your own combo"
+      ]
+    }
+  ]
 }

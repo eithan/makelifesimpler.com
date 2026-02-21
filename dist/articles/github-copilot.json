@@ -14,10 +14,36 @@
   "section": "tech",
   "featured": false,
   "simplicityScore": {
-    "score": 9.0,
+    "score": 9,
     "timeSaved": 9,
     "easeOfSetup": 9
   },
   "frictionNote": "$10/month after free trial. Free for students and open-source maintainers.",
-  "guides": []
+  "guides": [
+    {
+      "title": "GitHub Copilot in VS Code — Full Setup & Tips",
+      "type": "video",
+      "source": "Visual Studio Code",
+      "url": "https://www.youtube.com/watch?v=jXp5D5ZnxGM",
+      "summary": "Official VS Code tutorial covering installation, inline suggestions, chat, and best practices."
+    },
+    {
+      "title": "Getting Started with GitHub Copilot",
+      "type": "article",
+      "source": "GitHub Docs",
+      "url": "https://docs.github.com/en/copilot/getting-started",
+      "summary": "Official guide to activating your subscription and installing the extension in your editor."
+    },
+    {
+      "title": "Quick Start",
+      "type": "summary",
+      "steps": [
+        "Sign up for GitHub Copilot at github.com/features/copilot",
+        "Install the GitHub Copilot extension in VS Code",
+        "Sign in with your GitHub account when prompted",
+        "Start typing code — suggestions appear automatically as ghost text",
+        "Press Tab to accept, or Esc to dismiss"
+      ]
+    }
+  ]
 }
