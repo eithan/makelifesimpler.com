@@ -123,13 +123,16 @@ Format: `Product Name — Value Proposition`
 ### Summary
 One punchy sentence explaining what it does and why someone should care. Under 200 characters. This is the card text — it must stand alone.
 
-### Content (3 paragraphs)
+### Content Length & Structure
 
-**Paragraph 1 — What it does and why it matters.** Lead with the core value proposition. What problem does this solve? Why should anyone care? Be specific, not generic.
+Target **500-800 words** per article. The content field contains HTML with the following structure:
 
-**Paragraph 2 — The standout features.** What makes this different from alternatives? Focus on 2-3 features that actually matter for simplifying life. Skip the spec sheet.
-
-**Paragraph 3 — The real-world impact.** How does it change daily life? Include concrete outcomes (time saved, money saved, stress reduced). Social proof or data if available.
+- **Problem-first `<h3>` headline**: Frame a relatable problem, e.g. "How to stop vacuuming forever" — not "Roborock S8 Review"
+- **Paragraph 1 — The problem this solves.** Specific, relatable pain point. Make the reader feel the frustration.
+- **Paragraph 2 — What it does and why it's different.** Core value proposition and how it compares to alternatives. Be specific, not generic.
+- **Paragraph 3 — Standout features.** 2-3 features that actually matter for simplifying life. Skip the spec sheet.
+- **Paragraph 4 — Real-world impact.** Concrete outcomes: time saved, money saved, stress reduced. Include real numbers and comparisons.
+- **`<h3>⚡ Set it up in 5 minutes</h3>` section**: A short numbered `<ol>` list of 3-5 setup steps. Practical, actionable, specific.
 
 ### Tone
 - Conversational but informed. Like a smart friend recommending something.
@@ -139,6 +142,23 @@ One punchy sentence explaining what it does and why someone should care. Under 2
 
 ### Friction Note
 Every product has a catch. Be honest about it. Price, subscription requirements, setup complexity, limitations, compatibility issues. One sentence.
+
+### Editor's Note
+- `"editorsNote"` field in JSON — 1-2 sentences
+- Must reference real user feedback (Reddit, forums, reviews)
+- Frame honestly: acknowledge friction, but give context
+- Example: "Reddit users frequently mention X, but most say Y makes up for it."
+
+### Internal Linking
+- When writing content, scan existing articles in `articles/` for cross-referencing opportunities
+- Link to related articles using `<a href="article.html?id=ID">Product Name</a>` within the content HTML
+- Aim for 1-2 internal links per article where natural
+- Don't force links — only add them where the reference genuinely adds value
+
+### URL Field
+- Every article must have a `"url"` field pointing to the product's official website
+- Used for the mobile sticky CTA button ("Try/Buy [Product] →")
+- Use the most direct product page URL, not a generic homepage if possible
 
 ---
 

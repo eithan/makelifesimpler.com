@@ -41,6 +41,16 @@ const archiveTmpl = tmpl('archive.html');
 const totalClicks = Object.values(state).reduce((s, v) => s + v, 0);
 const clicksDisplay = totalClicks >= 1000 ? Math.round(totalClicks / 1000) + 'K+' : totalClicks.toString();
 
+// Compute total hours saved: timeSaved * clicks * 0.1 per article
+const totalHoursSaved = articles.reduce((sum, a) => {
+  const timeSaved = a.simplicityScore ? a.simplicityScore.timeSaved : 0;
+  const clicks = state[a.id] || 0;
+  return sum + (timeSaved * clicks * 0.1);
+}, 0);
+const hoursSavedDisplay = totalHoursSaved >= 1000
+  ? (totalHoursSaved / 1000).toFixed(1).replace(/\.0$/, '') + 'K'
+  : Math.round(totalHoursSaved).toString();
+
 function scoreColor(score) {
   if (score >= 7) return 'score-green';
   if (score >= 4) return 'score-yellow';
@@ -154,6 +164,7 @@ let homeContent = homeTmpl
   .replace(/\{\{TOTAL_ARTICLES\}\}/g, articles.length.toString())
   .replace('{{TOTAL_HUBS}}', site.hubs.length.toString())
   .replace('{{TOTAL_CLICKS}}', clicksDisplay)
+  .replace('{{TOTAL_HOURS_SAVED}}', hoursSavedDisplay)
   .replace('{{FEATURED}}', featuredHtml)
   .replace('{{THIS_WEEK}}', thisWeekHtml)
   .replace('{{HUB_CARDS}}', hubCardsHtml)

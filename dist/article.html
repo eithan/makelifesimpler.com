@@ -89,6 +89,20 @@
               '<span class="guide-chevron">▸</span></div>' + body + '</div>';
           }).join('') + '</div></div>';
       }
+      // Editor's note
+      let editorsNoteHtml = '';
+      if (article.editorsNote) {
+        editorsNoteHtml = '<div class="editors-note"><div class="editors-note-title">📝 Editor\'s Note</div><p>' + article.editorsNote + '</p></div>';
+      }
+
+      // Sticky mobile CTA
+      let stickyCta = '';
+      if (article.url) {
+        var ctaVerb = (article.section === 'tech') ? 'Try' : 'Buy';
+        var productName = article.title.split('—')[0].split('–')[0].trim();
+        stickyCta = '<a href="' + article.url + '" target="_blank" rel="noopener" class="sticky-cta">' + ctaVerb + ' ' + productName + ' →</a>';
+      }
+
       document.getElementById('articleContainer').innerHTML =
         '<div class="article-header">' +
           '<span class="article-emoji">' + article.emoji + '</span>' +
@@ -97,8 +111,10 @@
         '</div>' +
         scoreHtml +
         '<div class="article-body">' + article.content + '</div>' +
+        editorsNoteHtml +
         frictionHtml +
-        guidesHtml;
+        guidesHtml +
+        stickyCta;
       document.title = article.title + ' — Make Life Simpler';
     })
     .catch(() => {
